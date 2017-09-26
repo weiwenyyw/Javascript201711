@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+
+    <div id="tab"></div>
+</div>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var oBox= document.getElementById("box");
+    var oTab = document.getElementById("tab");
+    //typeof  : 返回一个字符串 ，不能具体细分对象数据类型中的数组 对象 正则。。。“object”
+    // typeof  null --> "object" : null是空对象指针
+    // instanceof ： 检测实例是否某个类
+    // constructor :
+    // Object.prototype.toString.call();
+//    function sum() {// sum :函数
+//        console.log(2)
+//    }
+//    //定时器是当代码加载到这一行时，记录一下时间，等过了一秒之后，这个里面的函数执行；
+    //setTimeout/setInterval是window下面的属性方法；
+//    var b=setTimeout(sum,1000)// 毫秒
+    // 定时器是当代码加载到这一行时，记录一下时间，以后每隔一秒，这个函数开始执行；
+//    var a=setInterval(sum,1000);
+
+    // 当前在js中是第几个定时器，那么返回值就是多少
+//    var c=setInterval(sum,1000);
+//    //
+//    clearInterval(c)// clearTimeout(b)
+//     for(var i=0;i<100000;i++){
+//
+//     }
+//     console.log(0)
+//    function sum() {// sum :函数
+//        console.log(2)
+//    }
+//    var a=setTimeout(sum,1000);
+//
+//    // 不会等待执行函数之后再去执行下面的代码；
+//    console.log(1)
+//   document.getElementById("div")
+//    var a =document.getElementsByClassName("box")[0];
+
+//    var tt = document.createElement("p");
+//    document.body.appendChild(tt)
+    // 数组  字符串  节点 动态操作节点  Math  Date  number  数据类型转换
+    // insertBefore :往容器中的某个元素前面添加一个元素；
+//    var a = document.createElement("div")
+//    oBox.insertBefore(a,oTab);
+    // removeChild   : 删除某一个儿子节点
+    // replaceChild : 替换 replaceChild（new，old）
+    // cloneNode : 克隆 ；默认是浅克隆，（false）  true  (深克隆)
+
+    // previousSibling :
+    //获取上一个哥哥的元素节点并且兼容所有的浏览器
+    function getBrother(curEle) {
+
+        var str = curEle.previousSibling;//
+        while(str){// str 是一个条件，null
+            if(str.nodeType===1){
+                return str; // 满足条件终止循环
+            }
+            str = str.previousSibling;
+        }
+    }
+
+//  substr  substring  slice
+    //toLowerCase
+    //charAt
+    //charCodeAt
+    // indexOf
+    // lastIndexOf
+    // split
+//    var str ="zhufeng";
+//    str.split("+") // ["zhufeng"];
+    //replace("u","z")
+
+    // 数组的方法：
+    //pop push shift  unshift  splice slice  concat join  sort  reverse  indexOf  lastIndexOf  map  forEach
+//    var ary =[12,3,4,6,7,8]
+////    ary.push(9);
+////    ary[6] =9
+//    ary.splice(ary.length,0,9)
+//    console.log(ary);
+    var  ary =[12,3,4,6,7,8];
+//    slice(n-1,m)
+    // es6新增的遍历
+//    for(var key of ary){
+////        console.log(key)
+//        console.log(key)
+//    }
+//    ary.sort(function (a,b) {
+//        return a-b;
+//    })
+    // slice(m,n) 从索引m开始，截取到索引n,不包含n;
+
+//Math.round(Math.random()*(m-n)+n)
+
+
+    //递归 ：
+    // 逻辑运算符 ，连接两个条件的
+    // &&  ： 并且 ，左右两边有一个false，整体就是false,
+//    if(1==1&&2==3){}
+//    // ||： 或   左右两边有一个为true，整体为true
+//    if(1==3||2==2){
+//
+//    }
+
+//    function sum(num) {
+//        // 停止条件
+//        if(num ===1){
+//            return 0;
+//        }
+//        if(num%5 ===0&&num%3===0){
+//            return num + sum(num-1)
+//        }else{
+//            return sum(num-1)
+//        }
+//    }
+//    sum(100)
+    
+//    function getCode() {
+//        var str = "";// 定义一个字符串
+//        var i=0;// 初始化变量i
+//        while(i<4){// 判断循环
+//            str+= Math.round(Math.random()*9)// 拼接四次
+//            i++;
+//        }
+//        oBox.innerHTML = str;// oBox 给内容
+//    }
+//    var a =setInterval(getCode,1000)
+//    setTimeout(function () {
+//        clearInterval(a)// :10秒之后清楚定时器a;
+//    },10000)
+    var oLis = document.getElementsByTagName("li");
+    for(var i=0;i<oLis.length;i++){
+        // 隔行变色
+        if(i%2===0){// 奇数行
+            oLis[i].style.background = "red";
+        }
+        if(i%2===1){
+            oLis[i].style.background = "green"
+        }
+        // 存储颜色索引
+        oLis[i].color = oLis[i].style.background;
+        oLis[i].index = i;
+        // 鼠标划入划出
+        oLis[i].onmouseover = function () {
+            this.style.background = "pink"
+        }
+        oLis[i].onmouseout = function () {
+            this.style.background = this.color;
+        }
+        // 点击
+        oLis[i].onclick = function () {
+
+            alert("我是第"+(this.index+1)+"个")
+        }
+
+    }
+
+</script>
+</body>
+</html>
