@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" class="box1">
+    <div id="tab" name="second"></div>
+</div>
+<!--<input type="text" name="box">-->
+<script>
+    // 1.document.getElementById : 通过ID来获取
+    // ID 是唯一的；
+    // 上下文只能是document；
+//    var oBox = document.getElementById("box");
+    //oBox.getElementById is not a function
+//    var oTab = document.getElementById("tab");
+//    console.log(oBox);
+    //在IE67 下，会把input的name属性当做ID来获取；
+
+    // 2.document.getElementsByClassName(): 在IE8及以下不存在这个方法：获取到的是一个类数组集合；
+//    var oBox1 = document.getElementsByClassName("box1")[0];
+//    console.log(oBox1);
+    // 3.document.getElementsByTagName : 通过标签名来获取元素，获取是一个类数组集合
+//    var a =document.getElementsByTagName("div")
+//    console.log(a);
+    // 4. document.getElementsByName : 通过name属性来获取，一般用于表单元素
+
+//    var  b = document.getElementsByName("second")
+//    console.log(b);
+    // 5.获取html  document.documentElement
+    // 6.body  ： document.body
+    // 经常用于移动端 id前面加# 。class 加.
+    // 7.document.querySelector("#box")
+    // 8.document.querySelectorAll()
+
+</script>
+</body>
+</html>

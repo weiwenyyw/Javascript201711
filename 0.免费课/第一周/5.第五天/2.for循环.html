@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //
+//    for(var i=0;i<8;i++){
+
+//        console.log(i)// 0-7
+//    i=0   0<8  console.log(0)   0++ i=1
+//    i=1 1<8 console.log(1)    1++ i=2
+// ...
+        //i=7 7<8 console.log(7)  7++  i=8
+        // 8<8 循环结束
+
+//    }
+//    console.log(i)// 8
+    // for循环的四步曲；
+    // 1) 初始化变量 var i=0
+    // 2) 进行条件判断
+    // 3) 执行循环中的代码
+    // 4) i++
+
+    // for 中continue  : 结束本轮循环
+
+//    for(var i=0;i<5;i++){
+//        if(i==3){
+//            continue;
+//        }
+//        console.log(i)// 0 1 2 4
+//    }
+
+    // for 循环中break： 结束整个循环
+//    for(var i=0;i<5;i++){
+//        continue
+//        if(i==3){
+//            break;
+//        }
+//        console.log(i)// 啥也不输出；
+//    }
+    for(var i=0;i<8;i++){
+        // 第一轮 i=3
+        // 第二轮  i=6
+        // 第三轮   i=8
+        if(i<5){
+            i+=2; // i=5
+            continue;
+        }
+        if(i>7){
+            break;
+            i++;
+        }
+        i++;
+    }
+    console.log(i) // 8
+
+
+
+
+
+</script>
+</body>
+</html>

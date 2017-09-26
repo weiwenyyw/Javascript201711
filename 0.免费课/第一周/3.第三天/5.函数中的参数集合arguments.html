@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // arguments : 函数天生自带的参数集合
+//    function sum(num1,num2,num3) {
+
+//        console.log(arguments.callee)//是一个参数集合，并且有length这个属性；跟实参有直接关系；
+        // arguments是对象数据类型的；类数组
+        //arguments.callee的属性值实际是当前整个函数；
+
+        //[1,2,3,4,5,6,7,9,100]
+//        arguments[0]
+//        var total = 0;
+//        for(var i=0;i<arguments.length;i++){
+//
+//            total+=arguments[i];
+//
+//        }
+//        console.log(total)//5
+//        total =0     i=0  arguments[0] =1  total =1
+//         total =1      i=1  arguments[1] =2   total =3;
+//        total =3       i=2   arguments[2] =3  total =6;
+//        //....
+//        console.log(num3);
+//        console.log(num1+num2+num3)// NaN
+
+//    }
+//    sum(1,2,3,4,5)
+    //如果只定义了形参，而没有传实参，那么这个形参的默认值是undefined
+    // undefined 和任何数运算都返回NaN
+    // 函数执行传的参数是实参；
+//    sum(1,2,3,4,5,6,7,9,100)
+//    var num =1;
+//    num+=2;
+//    num =3
+//    for(var i=0;i<5;i++){
+//        console.log(i)
+//
+//
+//        console.log(1)
+//    }
+    // 第一轮 i=0  i<5   console.log(0)  i=1
+    // 第二轮     i<5   console.log(1)   i=2
+    // 第三轮      2<5   console.log(2)   i=3
+    //第四轮       3<5   console.log(3)   i=4
+    //第五轮       4<5   console.log(4)   i =5
+    // 第六轮     5<5  条件不成立，中止循环
+    // isNaN : 首先会把后面的这个数强制转化成数字（Number)
+    function sum(){
+        var total =null;
+        for(var i=0;i<arguments.length;i++){
+            // isNaN  Number
+            var cur = Number(arguments[i]);
+            if(!isNaN(cur)){
+                total+=cur;
+            }
+        }
+    }
+    sum(1,2,3,4,"12px","2","13",[]);
+
+</script>
+</body>
+</html>

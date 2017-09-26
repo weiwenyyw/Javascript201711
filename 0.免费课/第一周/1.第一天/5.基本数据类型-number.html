@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // number  : 是一个数字  正数 负数 0 NaN
+    // typeof : 检测数据类型的方法
+
+//    var a =1;
+//    var b =2;
+//    a+b
+//    var str ="14.4px10px";
+
+    // 1.parseInt :字符串转数字，从左到右依次进行转化，直到遇到一个非有效数字停止；如果开头就不是数字，结果就是NaN
+//    parseInt("px12")// NaN
+//    console.log(parseInt(str)); // 14
+    // console.log(parseInt([12,34,77,88]));// 12 只把数组的第一项转数字
+  // 2.parseFloat :相比parseInt,多识别一个小数点
+    // parseFloat([])  // NaN
+    //parseFloat({}) // NaN
+//    var str ="14.4555px15";
+//    console.log(parseFloat(str)); // 14.4
+
+    // 3.Number : 强制转换成数字
+    var t =Number("12pab")
+    console.log(t);// NaN
+    // Number([]) -->0  Number({}) --> NaN  Number("") --> 0
+
+    // Number(true) --> 1  Number(false) -->0
+
+    //4.isNaN : 判断当前数字是否为有效数字的；如果是有效数字，就返回false， 如果不是有效数字，返回true；
+    //isNaN : 首先把要检测的值强制转化为number，然后再进行判断；
+    //isNaN(12) // false;
+    //isNaN(NaN) // true;
+
+    // 5.toFixed : 保留小数点位数的,并且返回一个字符串
+    // var  num = 3.1416926.toFixed(2);
+//    var a = parseFloat(num);
+//    console.log(a);
+    console.log(parseFloat(3.1416926.toFixed(2)));
+
+
+</script>
+</body>
+</html>

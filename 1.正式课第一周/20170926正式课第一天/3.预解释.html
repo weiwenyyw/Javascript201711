@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //
+//    console.log(num);//undefined
+//      var num =1;
+//      var obj = {}
+//    console.log(num);//1
+
+//      console.log(num);// num is not defined
+//        num =1;
+//        console.log(window.num);//1
+  // 在全局下定义的变量，相当于给window增加了一个属性名和属性值；
+
+    //形成全局作用域 ，然后进行预解释；
+    // 预解释： 在代码执行之前会把带var 和function的变量进行提前的声明
+    // 变量提升：在代码执行之前，把被var 和被function 的变量进行声明；
+   // 当加载js之前，首先浏览器会形成一个全局作用域，提供代码执行环境的；
+    // 全局作用域和私有作用域全部是栈内存；
+    // 基本数据类型存储到栈内存，引用数据类型都是存储到堆内存；
+
+    // var 和function；
+    // 共同点： 都要进行变量提升；
+    // 不同点 ： var只声明不定义；function 不仅声明还要进行定义
+    console.log(fn);// 输出整个函数体；
+    function fn(){
+        console.log(1)
+    }
+//    fn()//
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

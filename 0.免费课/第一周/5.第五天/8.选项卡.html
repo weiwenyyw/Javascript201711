@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #tab{
+            width:500px;
+            height:400px;
+            margin:50px auto;
+
+        }
+        #tab ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        #tab ul li{
+            width :80px;
+            height:40px;
+            line-height: 40px;
+            text-align: center;
+            margin-right: 15px;
+            border: 1px solid blue;
+            float:left;
+        }
+        #tab ul li.select{
+            background: blue;
+        }
+        #tab div{
+            display: none;
+            width : 500px;
+            height:300px;
+            border:1px solid blue;
+            text-align: center;
+            line-height: 300px;
+        }
+        #tab div.select{
+            display: block;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li class="select">书本</li>
+        <li>购物</li>
+        <li>美食</li>
+    </ul>
+    <div class="select">高程3</div>
+    <div>天猫</div>
+    <div>烤冷面</div>
+</div>
+<script>
+    //当点击书本时，显示高程3 这个div
+    // 当点击购物li,显示时天猫这个div
+    // 当点击美食，显示烤冷面div;
+    //document.getElementsByTagName : 在当前的整个文档中获取所有的div
+    var oLis = document.getElementsByTagName("li");
+    var oTab = document.getElementById("tab");
+    // 在oTab 里面获取所有的div
+    var oDivs = oTab.getElementsByTagName("div");
+    // [li.select, li, li]
+
+//    oLis[0].onclick = function () {
+//        console.log(0)
+//    }
+//    oLis[1].onclick = function () {
+//        console.log(1)
+//    }
+//    oLis[2].onclick = function () {
+//        console.log(2)
+//    }
+    for(var i=0;i<oLis.length;i++){
+
+        oLis[i].index = i;
+        // oLis[0].index = 0;
+        //oLis[1].index = 1;
+        //oLis[2].index = 2;
+
+        oLis[i].onclick = function () {
+            //1. 当点击li时，把所有的li 的class全部清掉
+            // 2.把所有的div上的class,也全部清掉
+            for(var j =0;j<oLis.length;j++){
+                oLis[j].className = null;
+                oDivs[j].className = null;
+            }
+            // 需要知道点击的li 的索引；
+            // 如何获取点击的那个li的索引；
+            // 如果直接获取i,那么已经是循环完的i ,3;
+            // this : 指向当前被点击的那个li
+           //  console.log(this.index)
+            oLis[this.index].className ="select";
+            oDivs[this.index].className = "select";
+
+        }
+    }
+
+//    var obj ={name:"zhufeng"}
+//    console.log(obj.index)
+
+
+
+</script>
+</body>
+</html>

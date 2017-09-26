@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数据类型
+//    var num=10;
+//    var obj = xxxfff000(指向堆内存){name:"zhufeng"};
+
+//    console.log(xxxfff000.name)
+    // 对象数据类型：数组和对象
+
+
+    // 操作语句
+    // 函数
+    // parseInt  parseFloat  Number  isNaN toFixed
+//    parseInt([])/ Number([])
+  //""==0  1==="1"  =
+
+// 0   ""  NaN  null  undefined
+//    function sum(){
+    //
+    //    }
+    //    console.log(sum());
+    //    var a = sum()
+
+    // 任意数求和
+    function sum() {
+        // arguments
+        console.log(arguments);
+        // 1.解决实参的问题；
+        // 2.循环每一个实参
+        // 3.把每一个实参进行转number
+        //4.检验是否是NaN,不是的话进行求和
+        var total =0;
+        for(var i=0;i<arguments.length;i++){
+            var cur = Number(arguments[i]);
+            if(!isNaN(cur)){
+                total += cur;
+            }
+        }
+        return total;
+
+    }
+    sum(10,100,[],"12px",{},1)
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

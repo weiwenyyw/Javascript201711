@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        .num{
+            width:200px;
+            height:200px;
+            border: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+<div class="num"></div>
+<script>
+    var a ="珠峰";
+    // 1.console.log:在控制台中输出；
+//    console.log(a);
+    // getElementsByClassName : 获取的结果是一个集合（类数组）
+    var b = document.getElementsByClassName("num")[0];
+//    console.log(b);// [div.num]
+    //2.alert : 浏览器的弹框
+//    alert(a)
+    //3.confirm: 多一个取消按钮
+//    confirm(a)
+    // 4.innerHTML 和innerText
+    // innerHTML 能够识别标签，innerText 识别整个文本
+
+    console.log(b.innerHTML);
+    b.innerText = "欢迎来到<a href='http://www.zhufengpeixun.cn'>珠峰培训</a>学习js课程第十一期";
+
+
+
+</script>
+</body>
+</html>

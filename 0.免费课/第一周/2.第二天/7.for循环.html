@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    console.log(1)
+//    for(var i=0;i<10;i++){
+        // 循环体
+//        console.log(i)
+        //第一次循环： var i ; i<10 ; console.log(0) ；i++
+        //第二次循环          1<10 ; console.log(1) ;i++
+        //第三次循环           2<10  ;console.log(2);i++
+        //...
+        // 最后一次循环
+//    }
+    // for循环的四步曲
+    // 1.初始化变量i;
+    // 2.进行条件判断
+    // 3.执行循环体中的代码
+    // 4.进行i++
+// 1-2-3-4-2-3-4-2-3-4...
+    // continue : 结束本轮循环,循环体中continue下面的代吗都不在执行了；
+//    for(var i=0;i<4;i++){
+//
+//        if(i==2){
+//            continue;
+//        }
+//        console.log(i);
+//    }
+    // break : 在for循环中，遇到break，结束整个循环
+//    for(var i=0;i<4;i++){
+//        //i=0 i<4 true   console.log(0)
+//        //    1<4  true   console.log(1)
+//        //    2<4  true
+//        if(i==2){
+//            break;
+//        }
+//        console.log(i);
+//    }
+
+    for(var i=0;i<10;i++){
+        if(i<6){
+            continue;
+            i++;
+        }
+        if(i>8){
+            break;
+        }
+        i++;
+    }
+    console.log(i)//10;
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

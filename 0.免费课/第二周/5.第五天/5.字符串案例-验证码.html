@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            margin:80px auto;
+            width:200px;
+            height:50px;
+            border: 1px solid bisque;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="box"></div>
+<script>
+    var oDiv = document.getElementById("box");
+    // 产生一个四位的验证码；
+    // 数字可以随机产生
+   function getCode() {
+       var  str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+       // 产生一个随机的索引；
+       var i=0;
+       var str1 = "";
+       while(i<4){
+           var index = Math.round(Math.random()*61);
+           //检测拼接好的字符是否存在新得到这个字符
+           var cur = str[index];
+           if(str1.toLowerCase().indexOf(cur.toLowerCase())===-1){
+               str1+=cur;
+               i++;
+           }
+       }
+       oDiv.innerHTML = str1;
+   }
+   getCode();
+    // 点击oDiv，执行getCode
+    oDiv.onclick = getCode;
+
+
+
+</script>
+</body>
+</html>

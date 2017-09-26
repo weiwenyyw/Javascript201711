@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a ="str";
+    var b = 1;
+    var c = true;
+    var d = null;
+    var e = undefined;
+    var f = {name:"zhufeng"}
+    var g = [1,2,3,"aa"]
+    function sum() {
+
+    }
+    // 数据类型检测；方法：
+    // typeof : 首先返回一个字符串，可以检测基本数据类型
+    // 局限性 ： 不能具体细分对象数据类型中的对象数组，正则；
+    console.log(typeof a)//"string"
+    console.log(typeof b) //"number"
+    console.log(typeof c) // "boolean"
+    console.log(typeof d)// "object"
+    console.log(typeof e) // "undefined"
+    console.log(typeof f)// "object"
+    console.log(typeof g)//"object"
+    console.log(typeof /^$/)// "object"
+    console.log(typeof sum) // "function"
+
+
+    console.log(typeof typeof typeof 15)//"string"
+
+    // 2.instanceof  检测实例是否属于某个类
+    // 3.constructor :
+    // 4.Object.prototype.toString.call()
+</script>
+</body>
+</html>

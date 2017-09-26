@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<script>
+    //
+//    var a = null;
+//    var b = undefined;
+//    var obj = {name:"珠峰"};
+//    obj =null;
+    var oBox = document.getElementsByClassName("box")[0]
+    console.log(oBox);
+    // null : 表示没有，一般空对象指针；
+
+      // 1) 通过ID来获取元素对象，如果元素中没有这个ID，返回值null;
+      // 2) 清空对象时赋值为null
+      // 3) 正则进行捕获，如果，没有捕获到内容，默认返回值是null；
+    //undefined : 未定义，没有
+    //var :声明变量
+//    var a;
+//    console.log(a)
+    var obj = {name:"珠峰"};
+    console.log(obj.age)
+    //1. 变量只声明，未定义，那么默认值是undefined；
+    //2.获取对象属性名对应的属性值，那么如果属性名不存在，那么获取到值是undefined
+    //3.函数有形参，没有传入实参，那么默认值是undefined
+    function sum(num1,num2) {
+        console.log(num1);
+    }
+    sum(1)
+
+
+
+
+
+
+</script>
+</body>
+</html>

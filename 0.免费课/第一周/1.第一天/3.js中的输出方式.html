@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+        *{
+            margin:0;
+            padding:0;
+        }
+        #abc{
+            margin:auto;
+            width :100px;
+            height:100px;
+            background:red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="abc">
+    <a href="http://www.zhufengpeixun.cn">珠峰培训</a>
+</div>
+<script>
+    var a = document.getElementById("abc");
+    //1. console.log : 在控制台输出
+//    console.log(1+1) // 2  1+1 数学表达式计算的结果输出；
+//    console.log(a);
+    //console : 控制台（F12） ,右击审查元素；
+    // source : 资源文件
+    // NetWork : 请求；
+    // Elements : 页面调整元素的样式；
+
+    // 2. alert : 弹出框，括号中内容就是弹出框中内容；
+//    alert("今天是9月12号");
+
+    // 3.confirm ： 确认提示框
+//    confirm("您确定关闭当前窗口吗")
+
+     // 4.innerHTML 和innerText : 给元素赋值内容
+
+    // innerHTML : 可以识别元素标签，
+    //innerText : 不识别元素标签，会把所有的内容当做文本给元素内容赋值；
+    // 单双引号不能连用
+//    a.innerHTML ='<a href="http://www.zhufengpeixun.cn">珠峰培训</a>';
+    a.innerHTML ="5";
+
+
+</script>
+</body>
+</html>

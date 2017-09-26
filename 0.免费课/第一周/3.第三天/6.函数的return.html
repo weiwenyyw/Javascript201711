@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // return  :
+    // 在函数中定义的变量是私有变量，外界不能访问；
+    // 在函数执行时候，会形成一个私有的作用域，保护里面变量不受外界的干扰-->闭包
+    // return  : 函数的出口
+    // return 下面的代码都不再执行了
+    // 如果函数没有return，默认的返回值是undefined
+    // 函数中遇到return，当前函数执行直接结束；
+
+    function sum(){
+        var total =null;
+        for(var i=0;i<arguments.length;i++){
+            // isNaN  Number
+            var cur = Number(arguments[i]);
+            if(!isNaN(cur)){
+                total+=cur;
+            }
+        }
+//        console.log(total)
+        return total;// return + 变量；其实把total这个存储的值返回到函数的外面，total这个变量外界还是不能访问；
+        // total 就是这个函数返回值
+    }
+//    console.log(total)
+    console.log(sum(1, 2, 3, 4, "12px", "2", "13", []));
+    var a = sum(1,2,3,4,"12px","2","13",[]);
+    console.log(a);
+
+
+</script>
+</body>
+</html>

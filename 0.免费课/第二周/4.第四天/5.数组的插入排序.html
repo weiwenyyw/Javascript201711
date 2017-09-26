@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ary =[12,6,8,5,4,3];
+    //  6 8 12
+    var ary1 = [];
+    ary1.push(ary[0]);
+    for(var i=1;i<ary.length;i++){
+        var cur = ary[i];
+        for(var j=ary1.length-1;j>=0;){
+            if(cur<ary1[j]){
+                j--;
+                // 如果排序比较第一项，直接放到数组的最前面就可以了
+                if(j===-1){
+                    ary1.unshift(cur);
+                }
+            }else{
+                ary1.splice(j+1,0,cur);
+                break;
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

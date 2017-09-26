@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div id="box"><input type="text" name="div1"></div>-->
+<div id="box">
+    <div class="btn"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+</div>
+
+<script>
+    // ID 是唯一的；
+    // 1.document.getElementById(""): 在document下，通过元素的ID来获取元素；
+    // getElementById的上下文必须是document；
+    var oBox = document.getElementById("box");
+    //    var oBox1 = document.getElementById("box1")
+//    console.log(oBox);
+    // 在IE67下，getElementById("box") 会把input的name 属性是box的input获取到
+
+    // 2.document.getElementsByClassName():获取到的是一个类数组集合,如果获取具体某一个元素，那么需要加索引
+    // 在IE8及以下是不兼容的；
+    //    var div = document.getElementsByClassName("div1")[0];
+    //    console.log(div);
+    // 3.document.getElementsByTagName(): 通过标签名来获取
+//    var oDiv = oBox.getElementsByTagName("div");
+//    console.log(oDiv);
+    // 4.document.getElementsByName():通过属性名为name属性值的来获取，一般用于表单元素  上下文必须是document
+//    var oDiv = document.getElementsByName("div1");
+//    console.log(oDiv);
+    // 5.document.documentElement : 获取当前页面的html ,或者是document；
+//    var a =document.documentElement;
+//    console.log(a);
+//    // 6.document.body
+//    var b = document.body;
+//    console.log(b);
+   //  7.在移动端获取元素的方式；id前面要加#，如果是class 加.
+    // 只获取第一个 上下文不一定是document
+//    querySelector  querySelectorAll在IE8以下是不兼容的；
+    //querySelector
+//    var  a =document.querySelector("#box .btn")
+//    console.log(a);
+    // 8.querySelectorAll： 获取多个
+    var b = document.querySelectorAll("#box .btn")
+    console.log(b);
+</script>
+</body>
+</html>

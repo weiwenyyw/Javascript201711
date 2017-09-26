@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            width :300px;
+            height:400px;
+            margin:20px auto;
+            border:1px solid red;
+            list-style: none;
+        }
+        ul li{
+            width:100%;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>欢迎大家来到珠峰培训第十一期学习</li>
+    <li>欢迎大家来到珠峰培训第十一期学习</li>
+    <li>欢迎大家来到珠峰培训第十一期学习</li>
+    <li>欢迎大家来到珠峰培训第十一期学习</li>
+    <li>欢迎大家来到珠峰培训第十一期学习</li>
+    <li>欢迎大家来到珠峰培训第十一期学习</li>
+    <li>欢迎大家来到珠峰培训第十一期学习</li>
+    <li>欢迎大家来到珠峰培训第十一期学习</li>
+</ul>
+<script>
+    //要操作谁，就要获取谁；
+    var oLis = document.getElementsByTagName("li");
+    console.log(oLis)
+    for(var i=0;i<oLis.length;i++){
+        // 取余/模  %  取余数；
+        // i 代表当前行的索引；
+     // 偶数行
+        // 奇数行
+        if(i%3==0){
+            oLis[i].style.background = "red";
+        }
+        if(i%3==1){
+            oLis[i].style.background = "blue"
+        }
+//        if(i%3==2){
+//            oLis[i].style.background = "green";
+//        }
+        // 第一行红色  第二行 蓝色  第三行绿色
+    }
+
+
+
+</script>
+</body>
+</html>

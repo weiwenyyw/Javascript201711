@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // js中设置定时器两种方式
+//    steTimeout(方法，时间)
+    // 1.setTimeout : 当1000毫秒之后，执行这个方法，执行一次；
+
+  //1
+    // 2.setInterval : 每隔1000毫秒，方法执行一次
+//    var b =setInterval(function () {
+//        console.log("hello")
+//    },1000)
+//    console.log(b);//2
+    // 定时器的返回值： 代表当前是页面中第几个定时器
+
+//    var  d = 1
+//    function setTimeout() {
+//        d++
+//        return  2;
+//    }
+//    setTimeout()
+//    setTimeout()
+//    var a=setTimeout(function () {
+//        clearInterval(b)
+//    },5000)
+
+    // 清除定时器clearInterval : 清除定时器
+//    clearTimeout(a)
+    // 每隔一秒输出hello;,输出5个hello，之后不需要再输出
+
+    var a = setInterval(function () {
+        console.log("hello")
+    },1000)
+    var b = setTimeout(function () { // 浏览器会记录当前的时间；
+        clearInterval(a)
+    },5000)
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

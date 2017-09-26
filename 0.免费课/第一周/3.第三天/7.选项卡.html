@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #tab{
+            width :500px;
+            height:300px;
+            margin:30px auto;
+            /*border:1px solid pink;*/
+
+        }
+        #tab ul {
+            list-style: none;
+            overflow: hidden;
+        }
+        ul li{
+            width :80px;
+            height:30px;
+            text-align: center;
+            line-height: 30px;
+            float :left;
+            margin-right:15px;
+            border:1px solid #e0e0e0;
+        }
+        ul li.select{
+            background:pink;
+            color:white;
+        }
+        #tab div{
+            width : 500px;
+            height:280px;
+            border:1px solid pink;
+            text-align: center;
+            line-height:280px;
+            font-size: 28px;
+            display: none;
+            color:white;
+        }
+        #tab div.select{
+            display: block;
+            background: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li class="select">动漫</li>
+        <li>电视剧</li>
+        <li>电影</li>
+    </ul>
+    <div class="select">海贼王</div>
+    <div>那年花开月正圆</div>
+    <div>蜘蛛侠</div>
+</div>
+
+<script>
+     //  点击li,显示相应的div
+    // 要操作谁，就要先获取谁；
+     var oTab = document.getElementById("tab");
+    var oLis = document.getElementsByTagName("li");
+    // 在oTab这个元素下面获取所有的div;
+    var oDivs = oTab.getElementsByTagName("div")
+
+     // 获取是一个类数组，不能点击事件
+     
+    
+//    oLis[0].onclick = function () {
+     //        
+     //    }
+     //     oLis[1].onclick = function () {
+     //
+     //     }
+     //     oLis[2].onclick = function () {
+     //
+     //     }
+     function change(a) {
+        //console.log(this)// window
+         for(var j=0;j<oLis.length;j++){
+             // 当前元素对象的class的名字
+             oLis[j].className = null;
+             oDivs[j].className = null;
+         }
+         oLis[a].className = "select";
+         oDivs[a].className ="select";
+     }
+
+    for(var i=0;i<oLis.length;i++){
+        // 给当前li新增一个属性，属性名是a ,属性值i;4
+        // 循环三次，分别给每一个li新增一个属性叫index,属性值是当前的i;
+//        oLis[0].index = 0;
+//        oLis[1].index = 1;
+//        oLis[2].index = 2;
+        oLis[i].index = i;
+        oLis[i].onclick = function () {
+            //函数体中的this,代表当前函数执行的主体；
+            //console.log(this)//oLis[0].index  0
+            change(this.index)
+        }
+    }
+//    var obj = {name:"陈金广"}
+//    obj.age = 88;
+//     console.log(obj);// {name:"",age:88}
+
+</script>
+</body>
+</html>

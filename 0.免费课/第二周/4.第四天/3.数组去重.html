@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var ary = [10,1,20,20,10,49,88,66,66];
+    //indexOf  : 检测数组中成员是否存在，不存在返回-1；
+//    console.log(ary.indexOf(99));
+//   var ary1 = [];
+//   for(var i=0;i<ary.length;i++){
+//       var cur = ary[i];
+//       if(ary1.indexOf(cur)===-1){
+//           ary1.push(cur);
+//       }
+//   }
+//    console.log(ary1);
+//    console.log(ary);
+    var ary = [10,1,20,20,10,49,88,66,66];
+//    obj ={10:10,1:1,20:20};
+
+    // 在原有数组上进行去重
+    // 利用了对象的属性名如果是重复的，那么后面的值会把前面的覆盖掉
+//    var obj ={1:1,1:3,1:5};
+//    console.log(obj["1"]);
+    var obj ={};
+    for(var i=0;i<ary.length;i++){
+        var cur = ary[i];
+//        if(obj[cur] === cur){
+//            // 数组塌陷
+////            ary.splice(i,1);
+//            ary[i] = ary[ary.length-1];
+//            ary.length--;
+//            i--;
+//            continue;
+//        }
+        obj[cur]= cur;
+
+    }
+    console.log(obj);
+    var ary1 = []
+    for(var key in  obj){
+        ary1.push(obj[key])
+    }
+    console.log(ary1);
+
+
+</script>
+</body>
+</html>

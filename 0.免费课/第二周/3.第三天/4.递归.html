@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 递归：在函数体内部调用自己执行
+   // 递归需要结束的条件
+//    function sum() {
+//        console.log(1)//Maximum call stack size exceeded :
+//
+//        sum()
+//    }
+//    sum()
+
+    // 求1-100之间不能被3整除的和
+//    var total = 0;
+//    for(var i=0;i<=100;i++){
+//        i%3!==0?total+=i:null;
+//    }
+//    console.log(total)
+
+    // 用递归实现求和：求1-100之间不能被3整除的和
+    function sum(num) {
+        if(num ===1){
+            return num;
+        }
+        if(num%3===0){
+            return sum(num-1);
+
+        }
+        return num +sum(num-1)
+
+        // 100  return 100 + sum(99)
+        // 99    return 100 + sum(98)
+        // 98    return 100 + 98 + sum(97)...+1
+    }
+
+    console.log(sum(100));
+
+
+</script>
+
+
+
+</body>
+</html>

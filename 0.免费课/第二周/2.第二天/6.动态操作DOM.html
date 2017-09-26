@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <div id="div1"></div>
+
+    <div></div>
+</div>
+
+<script>
+    var oBox = document.getElementById("box");
+    var div1 = document.getElementById("div1")
+     //
+    // 1.document.createElement(): 创建元素 ；参数就是标签名
+    var div = document.createElement("p");
+////    div.appendChild("唐元帅很酷");//parameter(参数) 1 is not of type 'Node'.
+    div.innerHTML = "唐元帅很酷"
+    // 2.添加 appendChild 往容器的末尾添加一项；
+//    oBox.appendChild(div)
+    //3.insertBefore :向容器中的某个元素的前面新增一项
+    // 容器.insertBefore(new,old)
+//    oBox.insertBefore(div,div1)
+     // 4.替换  把容器中某一个元素替换成新元素
+//    oBox.replaceChild(new,old)
+//    oBox.replaceChild(div,div1)
+    // 5.removeChild : 删除容器中某个元素参数： 是要删除的那个元素对象
+
+//    oBox.removeChild(div1)
+
+    // 6.cloneNode :克隆节点  参数true： 深克隆（把所有的子节点也克隆一份）
+ // false 浅克隆： 只克隆当前这个元素(不传参数，默认是false)
+    console.log(oBox.cloneNode(false));
+
+
+</script>
+
+
+
+</body>
+</html>

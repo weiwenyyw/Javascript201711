@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var ary =[12,88,99,55,67,99,12,88,88,99,12];
+    // 把数组中重复项去掉；
+    // 1.indexOf
+//    var ary1 =[];
+//    for(var i=0;i<ary.length;i++){
+//        // 1.循环数组每一项，如果ary1中不存在这一项，放进ary1，如果存在，则不放
+//        if(ary1.indexOf(ary[i])===-1){
+//            ary1.push(ary[i])
+//        }
+//
+//    }
+//    ary =ary1;
+//    console.log(ary)
+    // 2.对象: 数字可以作为属性名的,如果属性名相同，后面的值会把前面的覆盖掉；
+//    var obj ={name:"zhufeng",10:10,10:39}
+//    console.log(obj);
+    var ary =[12,88,99,55,67,88,12];
+    var obj = {};
+    for(var i=0;i<ary.length;i++){
+        var cur = ary[i];
+        // 第六次 cur = 99
+        // i=5
+        if(obj[cur] === cur){
+            // 数组塌陷问题：
+//            ary.splice(i,1);
+            ary[i] = ary[ary.length-1];// 把数组的最后一项放在当前这一项；
+            ary.length--;// 删除数组的最后一项
+            i--;// 对这一项进行检测
+            continue;
+        }
+        obj[cur] = cur;
+        // 第一次循环 obj {12:12}
+        // 第二次循环 obj{12:12,88:88}
+        // 第五次循环 obj{12:12,88:88,99:99,55:55,67:67}
+
+
+    }
+    console.log(ary)
+
+
+
+</script>
+</body>
+</html>

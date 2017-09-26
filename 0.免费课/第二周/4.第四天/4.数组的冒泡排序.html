@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ary =[13,14,15,16,17,19];
+//    ary.sort(function (a,b) {
+//        return a-b;
+//    })
+    // 冒泡排序
+
+   for(var i=0;i<ary.length;i++){
+       // 每循环一次，让数组中的最大项放在数组的最后面
+       var flag = true;
+       for(var j=0;j<ary.length-1-i;j++){
+           // 让相邻的两项进行比较
+           if(ary[j] >ary[j+1]){
+               // 借助第三个变量，实现位置交换
+               var  temp = ary[j];
+               ary[j] = ary[j+1];
+               ary[j+1] = temp;
+               flag = false;
+           }
+       }
+       // 主要不存在前一项大于后一项的情况，结束整个循环；
+       if(flag){
+           break;
+       }
+
+   }
+    console.log(ary);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arySort = [12,66,77,88,33,9,34,78]
+    // 快速排序
+
+    //  找到一个基准点，通过数组的中间项，
+    // 让数组中每一项和这个基准点进行比较，比这个基准点小的放在数组的左边的数组中，比基准点大的放在基准点右面的数组中；直到当前这个数组只有一项，就不需要在进行比较了
+    function quickSort(ary) {
+//        console.log(ary)
+        // 获取中间项的索引
+      // 递归的
+        if(ary.length<=1){
+            return ary;
+        }
+        var index = Math.floor(ary.length/2);
+        // 删除了数组中间项，获取到这一项的值；
+        var middle = ary.splice(index,1)[0]// []
+        var left=[];
+        var right = [];
+
+        for(var i=0;i<ary.length;i++){
+            var cur = ary[i];
+            if(cur<middle){
+                left.push(cur)
+            }else{
+                right.push(cur)
+            }
+
+        }
+
+        return quickSort(left).concat(middle,quickSort(right))
+
+    }
+    console.log(quickSort(arySort));
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var a = document.getElementById("box");
+    //a 是一个对象数据类型的{id:"box"}
+//    a.index =1;
+//    console.log(a.index)
+//    [{},{},{}]
+//    oLis[0].index =0
+    // if 是个关键字，在js中，条件判断语句
+    // 1.if(){}else if(){}else{}
+   // 条件中只有一个值，转布尔；
+    if(a){
+        // 当条件成立的时候，执行折行代码
+        console.log(100)
+    }else if("1"===1){
+        // 只要碰到一个成立的，下面的代码不再执行了
+        console.log("2")
+    }else if(2==2){
+        // 如果（）中是一个表达式，那么会先计算出结果，然后再输出
+        console.log(2+2);
+    }else{
+        // 当上面的条件都不成立，执行这一行代码
+        console.log("以上条件全部不成立")
+    }
+//    var num=0
+//    num ++
+//    num +=2
+//    num --
+    // ++ += --  || &&
+    //2.三元运算符 判断
+//    if("你很帅"){
+//        console.log("那就返回true")
+//    }else{
+//        console.log("false")
+//    }
+    "你很帅"?console.log("那就返回true"):console.log("false");
+
+
+    // 3.switch case
+    var num =3;
+//    "3" === 3  : 绝对比较
+    switch (num){
+        case 3:
+            console.log(1);
+            break;
+        case 5:
+            console.log(5);
+            break;
+        default:
+            console.log(7)
+    }
+
+
+
+
+</script>
+</body>
+</html>

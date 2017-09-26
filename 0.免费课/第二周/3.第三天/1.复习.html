@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div></div>
+<script>
+//    var  ary =[12,13,34]
+
+//    for(var i=0;i<ary.length;i++){
+//        //
+//        var f =true;
+//        for(var j=0;j<ary.length-1-i;j++){
+//            if(ary[j]>ary[j+1]){
+//                var temp = ary[j];
+//                ary[j] = ary[j+1];
+//                ary[j+1] = temp;
+//                flag = false;
+//            }
+//        }
+//        if(f){
+//            break;
+//        }
+//
+//    }
+      //插入排序
+
+    var ary=[322,32,2,2,3,34,5,6,6,4,4,3];
+    var newAry=[];
+    newAry.push(ary[0]);
+    for(var i=1;i<ary.length;i++){
+        var u=ary[i];
+        for(var j=newAry.length-1;j>=0;){
+            if(newAry[j]>u){
+                j--;
+                if(j===-1){
+                    newAry.unshift(u)
+                }
+            }else{
+                newAry.splice(j+1,0,u);
+                break;
+            }
+        }
+    }
+    // 思考题插入排序排序： 从左到右；
+    // DOM的节点和属性
+        // 节点类型   nodeType    nodeName    nodeValue
+    // 元素节点       1           大写的标签名    null
+   // 文本节点        3            #text        文本内容
+  // 注释节点         8           #comment      注释内容
+   // document       9           #document      null
+
+
+    //  DOM 中的方法
+    // 1.childNodes
+    // 2.children
+    // 3.parentNode
+    // 4.previousSibling    previousElementSibling
+    // 5.nextSibling       nextElementSibling
+    // 6. firstChild       firstElementChild
+    // 7.lastChild       lastElementChild
+
+
+    // 动态操作DOM的方法
+    // 1.document.createElement
+    //2.appendChild
+    //3.insertBefore(new,old)
+    //4.replaceChild(A,B)
+    // 5.removeChild
+    // 6.cloneNode(true/false)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

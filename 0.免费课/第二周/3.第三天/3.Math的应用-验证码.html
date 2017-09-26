@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:200px;
+            height:50px;
+            margin:80px auto;
+            border: 1px solid blue;
+            border-radius: 10px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    //获取元素
+    var oBox = document.getElementById("box");
+    // 产生四个随机数
+    function getCode() {
+        var i=0
+        var str = ""
+        while(i<4){
+            str+=Math.round(Math.random()*9)
+            i++;
+        }
+        oBox.innerHTML = str;
+    }
+    oBox.onclick = function () {
+       // 每次产生一个随机数，产生四次
+//        for(var i=0;i<4;i++){
+//
+//        }
+        // 当点击oBox 的时候，产生随机数，并赋值给当前的oBox
+       getCode()
+    }
+    getCode()
+
+
+</script>
+</body>
+</html>

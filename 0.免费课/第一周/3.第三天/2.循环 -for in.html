@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // for  循环
+    var ary =[1,2,4,6,7,8,9];
+//  数组有个默认的属性是length，代表当前数组有多少项
+//    console.log(ary.length)
+//    for(var i=0;i<ary.length;i++){
+//        console.log(ary[i])
+//    }
+    var obj = {address:"回龙观",school:"珠峰",2:"你好",1:"欢迎来到珠峰"}
+    // obj 没有length属性，不能同for 循环
+
+    // for  in  循环： 遍历对象
+    for(var key in obj){
+//        console.log(key)
+        // key ： 属性名
+        // obj.key : 不允许的原因，防止循环这个对象中的属性名有数字
+        // 输出的顺序： 首先会把属性名是数字的属性值输出，并且是按照数字的大小的顺序依次输出
+        console.log(obj[key])
+    }
+//    var obj1 = {1:"你好",2:"欢迎来到珠峰"};
+//    console.log(obj1[2]);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:200px;
+            height:50px;
+            margin:80px auto;
+            border: 1px solid blue;
+            border-radius: 10px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var oBox = document.getElementById("box");
+    function getCode() {
+        var str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var i=0;
+        var str1 = "";
+        while(i<4){
+            // 产生一个[0-61]之间的随机数，作为索引去str中去获取当前字符
+           var index = Math.round(Math.random()*61)
+            var cur = str[index];
+           // 把str1 中字符全部转小写，拿到的也转小写，进行相同字符检测，如果是-1；说明这个字符不存在，再进行拼接
+            if(str1.toLowerCase().indexOf(cur.toLowerCase())===-1){
+               str1+=cur;
+               i++;
+            }
+        }
+       oBox.innerHTML = str1;
+    }
+    getCode();
+    oBox.onclick = function () {
+        getCode();
+    }
+
+</script>
+</body>
+</html>

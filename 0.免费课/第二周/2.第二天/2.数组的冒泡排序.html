@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数组的冒泡排序
+    // sort : 两两进行比较
+
+    // 循环第一次
+//    var  ary =[10,2,8,68,88,46,66];
+//    for(var i=0;i<ary.length;i++){
+//        // i =0
+//       for(var j =0;j<ary.length;j++){
+//           if(ary[i]>ary[j]){
+//               // ary[i] =10; ary[j] =2
+//               var temp = ary[i];
+//               ary[i] = ary[j];
+//               ary[j] = temp;
+//           }
+//       }
+//    }
+//    ary =[2,10,8,68,88,46,66]
+//   i=1 j=0 [10,2,8,68,88,46,66]
+//    i=1 j=1  [10,2,8,68,88,46,66];
+//    i =2[10,8,2,68,88,46,66]
+//    i=3 ary[3]  68
+  // 冒泡排序的思想： 每一轮循环，让数组的相邻的两项进行比较，把较大值放在后面，进行位置交换，执行完第一轮，会把最大值放到最后面，第二轮，把第二大值放在倒数第二的位置；
+
+// for(var i=0;i<ary.length;i++){
+//
+//     // i =0 ;
+//     // 第一轮循环 ： 把最大值放到数组的最后面 [2,8,10,68,46,66,88]
+//     // 第二轮循环 ： [2,8,10,46,66,68,88]
+//     // 第三轮循环
+//     var flag =true;
+//     for(var j =0;j<ary.length-1-i;j++){
+//         // [2,8,10,68,88,46,66];
+//         if(ary[j]>ary[j+1]){
+//             // 当前一项比后一项大的时候
+//             // 10  2
+//             var temp = ary[j];
+//             ary[j] = ary[j+1];
+//             ary[j+1] = temp;
+//             flag =false;
+//         }
+//     }
+//     if(flag){
+//         break;
+//     }
+// }
+//    [12,34,56,65]
+    // 从小到大排序
+    var  ary =[10,2,8,68,88,46,66];
+    for(var i=0;i<ary.length;i++){
+        // 循环一次： 最大值放到了最后面一项
+
+        var flag =true;
+        for(var j=0;j<ary.length-1-i;j++){
+            if(ary[j]>ary[j+1]){
+                var temp = ary[j];
+                ary[j] = ary[j+1];
+                ary[j+1] = temp;
+                flag =false;
+            }
+        }
+        if(flag){
+            break;
+        }
+    }
+    // 第一次循环： i=0；
+
+
+
+    console.log(ary);
+
+
+</script>
+</body>
+</html>

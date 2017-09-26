@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <p>
+        欢迎大家来珠峰学习js
+        <!---->
+    </p>
+    <div id="div"></div>
+    <div id="div1"></div>
+
+</div>
+<script>
+    // js中分为四种类型
+    // 空格\换行都是文本节点
+
+                      // nodeType      nodeName     nodeValue
+    // 1.元素节点           1             大写的标签名     null
+    // 2.文本节点           3            #text         文本内容
+    // 3.注释节点           8             #comment       注释内容
+    // 4.document          9            #document      null
+    var oDiv = document.getElementById("div");
+    var oDiv1 = document.getElementById("div1")
+//    console.log(oBox.firstChild);
+
+    // 1.childNodes : 获取所有的子节点
+
+    // 2.children : 获取所有的元素子节点
+    // 3.parentNode : 获取父亲节点
+    // 4.previousSibling : 获取上一个哥哥节点
+   // previousElementSibling :  获取上一个哥哥元素节点 在IE678 不兼容
+    // 5.nextSibling : 获取下一个弟弟节点
+    // nextElementSibling : 获取下一个弟弟元素节点
+    // 6.firstChild : 第一个子节点
+    // firstElementChild : 第一个元素子节点
+    // 7.lastChild : 获取最后一个子节点
+    // lastElementChild : 获取最后一个元素子节点
+
+    // 获取上一个哥哥的元素节点兼容所有的浏览器
+
+
+    function getBrother(curEle) {
+        var pre = curEle.previousSibling;
+        while(pre){
+            if(pre.nodeType===1){
+                return pre;
+            }
+            pre=pre.previousSibling;
+        }
+    }
+    console.log(getBrother(oDiv));
+
+
+</script>
+</body>
+</html>

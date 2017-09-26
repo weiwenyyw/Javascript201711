@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="tab">
+    <div id="div1">
+        <p></p>
+    </div>
+    <div class="second"></div>
+    <div></div>
+</div>
+<div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</div>
+<script>
+    var oTab = document.getElementById("tab");
+    var oDiv =document.getElementById("div1");
+    var sec = oTab.getElementsByTagName("div")[1];
+    console.log(oTab.firstChild);
+    //    console.log(sec.previousElementSibling);
+    //    console.log(oDiv.parentNode)
+//    console.log(oTab.children)
+    // DOM由节点组成
+    // js中的节点类型： 四种
+     //            nodeType      nodeName      nodeValue
+    //元素节点         1           大写的标签名     null
+    // 文本节点        3          #text          文本内容
+    // 注释节点        8          #comment       注释内容
+    // document       9         #document       null
+    // 空格属于文本节点
+   // 1.childNodes : 获取所有的子节点
+    // 2.children : 获取所有的元素子节点
+    // 3.parentNode: 获取父亲节点
+    // 4.previousSibling: 获取上一个哥哥节点
+    // previousElementSibling: 获取上一个哥哥的元素节点(IE8及以下不兼容)；
+    //5.nextSibling : 获取下一个弟弟节点
+    // nextElementSibling : 获取下一个弟弟元素节点 （IE8及以下不兼容）
+    // 6.firstChild : 获取第一个子节点
+       // firstElementChild : 获取第一个元素子节点 (IE8及以下不兼容)
+    // 7.lastChild : 获取最后一个子节点
+       // lastElementChild : 获取最后一个元素子节点(IE8及以下不兼容)
+    // 写一个方法获取上一个哥哥的元素节点（兼容所有的浏览器）
+
+    function getBrother(curEle) {
+        var pre = curEle.previousSibling;
+        while(pre){
+            if(pre.nodeType === 1){
+                return pre;
+            }
+            pre = pre.previousSibling;
+        }
+    }
+
+    console.log(getBrother(sec));
+
+
+</script>
+</body>
+</html>

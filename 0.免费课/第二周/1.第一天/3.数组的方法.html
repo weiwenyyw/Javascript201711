@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ary =[12,3,4,6,88];
+    // ary.length--
+    // 1.pop ： 在数组这个类的原型上，是一个方法（function）
+//    ary.pop()
+//    console.log(ary)
+    // 2.push
+//    ary[5] =100;
+//    ary[ary.length] =100;
+//    ary.push(200)
+//    ary.push(200,300)
+//    console.log(ary);
+    //3.shift
+    // 4.unshift
+
+//    ary.unshift(100,200)
+//    console.log(ary)
+    // 5.splice
+//    ary.splice(2,1,66,99)
+//    ary.splice(2,0,66,99)
+//    console.log(ary);
+    // 6.slice
+//    var a =ary.slice(3,2)
+//    console.log(a);
+//    var ary =[12,3,4,6,88];
+//    var ary1 = 100;
+    // 7.concat : 克隆
+//    console.log(ary.concat(100,200));
+//    console.log(ary);
+    // 8.join
+//    console.log(ary.join("+"));
+//    console.log(ary);
+    // 9.sort 排序 只能排序10以内，按照数字第一个数字大小
+//      ary.sort()
+//    ary.sort(function(a,b){
+//        return a-b;
+//    })// 从小到大排序
+//    ary.sort(function(a,b){
+//        return b-a;
+//    })// 从大到小排序可以对10以上的数字排序
+//    // 大于10的排序
+//    var ary = [1,70,200,66,0,9];
+//    ary.sort(function(a,b){
+//        return a-b;
+//    })
+//    console.log(ary.sort(function(a,b){
+//        return b-a;
+//    }));
+//    console.log(ary);
+    // 10.reverse :
+//    var ary =[12,3,4,56,79];
+//    console.log(ary.reverse());
+//    console.log(ary);
+    // 11.indexOf
+//    var ary =[12,46,88,99,12,88];
+//    console.log(ary.indexOf(200));
+//    console.log(ary);
+    // 12.lastIndexOf
+//    var ary =[12,46,88,99,12,88];
+//    console.log(ary.lastIndexOf(88));
+//    console.log(ary);
+    //13.map
+//    var ary =[12,46,88,99,12,88];
+//    for(var i=0;i<ary.length;i++){
+//        console.log(ary[i])
+//    }
+//    ary.map(function (item, index) {
+//        console.log(item)
+//    });
+//    console.log(ary);
+    // 14.forEach
+    var ary =[12,46,88,99,12,88];
+    ary.forEach(function (item, index) {
+        console.log(index)
+    })
+
+
+</script>
+</body>
+</html>

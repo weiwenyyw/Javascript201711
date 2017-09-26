@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 插入排序；
+    // 红桃6 红桃7
+    var ary =[4,8,3,6,7];
+
+    var newAry = [];// [3,4,6,7,8]
+    newAry.push(ary[0]);
+    // 外面循环，是从ary中获取数组项；
+    // 里面循环
+    for(var i=1;i<ary.length;i++){
+        var cur = ary[i];// 8
+        for(var j = newAry.length-1;j>=0;){
+            if(cur<newAry[j]){
+                // 当j=0的时候，说明已经比较多数组的第一项；
+                j--;
+                if(j===-1){
+                    newAry.unshift(cur)
+                }
+            }else{
+                // 当cur大于newAry的当前项
+                newAry.splice(j+1,0,cur)
+                break;
+            }
+        }
+    }
+    console.log(newAry)
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

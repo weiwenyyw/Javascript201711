@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="bo" class="tab">
+    <ul id="box" class="tab">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    // 页面中ID是唯一的，不能重复
+    // DOM
+    //document.getElementById("bo")
+    // document : 文档
+    // get : 获取，得到
+    // Element : 元素
+    // By : 通过
+    // ID : ID 名字
+
+    // class : 通过class 来获取元素，得到的是一个集合
+    //通过class 获取元素得到的是一个元素集合，如果获取对应的元素对象，记得加索引；
+    var ary =document.getElementsByClassName("tab")[1];
+    console.log(ary);
+    console.log(document.getElementById("bo"));
+//    var ary =[1,2,"shde",3,"sy"]
+
+    // 数组索引是从0开始
+
+
+//    var a =[1,2,3]
+
+</script>
+</body>
+</html>

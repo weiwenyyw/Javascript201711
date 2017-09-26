@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+
+        }
+        html,body{
+            width:100%;
+            height:100%;
+        }
+
+    </style>
+</head>
+<body style="background:white;">
+<script>
+    //如果背景是白色-->红色-->蓝色-->绿色-->黑色-->白色
+    var body = document.getElementsByTagName("body")[0];
+    // 当点击body的时候，会执行这个函数中的代码
+//    function total() {
+//        console.log(1)
+//    }
+//    total()
+    // 元素.style.属性名 ： 只能获取行内设置的样式，不能获取css中设置的样式
+//   var obj = {style:{background:""}}
+    body.onclick = function () {
+//        console.log(1)
+        // 当设置背景之前，首先需要知道当前的背景
+        var bg = body.style.background;
+//        console.log(bg)
+        if(bg === "white"){
+            body.style.background = "red"
+        }else if(bg== "red"){
+            body.style.background = "blue"
+        }else if(bg == "blue"){
+            body.style.background = "green"
+        }else if(bg == "green"){
+            body.style.background = "black"
+        }else{
+            body.style.background = "white"
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

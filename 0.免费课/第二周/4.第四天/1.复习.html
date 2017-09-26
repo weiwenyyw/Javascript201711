@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数据类型
+    // 基本数据类型： number string boolean  null  undefined
+    // 引用数据类型 ： 函数数据类型(函数) 对象数据类型（对象 数组 正则 Date  Math...）
+    // number  : 数字 NaN
+    // parseInt  :不能识别小数点
+    // parseFloat : parseFloat("12.77pxdhjs")// 12.77
+    // Number : 强制转换成数字
+    // toFixed : 保留小数点
+    // isNaN : 判断是否是有效数字的；isNaN("12") // false
+
+    // 布尔 ： true--> 1 false -->0
+    // 转布尔是false : 0 NaN  ""  null undefined
+    // = : 赋值  ==  ： 比较  NaN== NaN --> false === ： 绝对比较
+    // !  : 取反  先把后面的值转换成布尔 然后再取反
+    // 数据类型之间比较 （==） "1" == 1 --> true  "1" === 1
+
+
+    // null  和 undefined
+    // null : 空对象指针
+    // 1.通过id 获取元素没有获取到是null;
+    // 2.清空对象内存，赋值null;
+    // 3.正则捕获不到内容是null
+    // undefined  : 未定义
+    // 1.变量被定义，未赋值那么默认存储值是undefined
+    // 2.对象中的属性名对应的属性值，属性名不存在，获取时undefined
+    // 3.有形参，实参没有赋值，形参存储undefined
+    // 4.函数没有return，返回值也是undefined
+
+    // 对象 ：地址类型{name:"zhufeng"}
+//    var obj = {age:1}
+    //obj["age"]=2// 1
+    // delete
+//    delete  obj["age"]
+    // 遍历对象的循环
+//    for(var key in obj){
+//        console.log(obj[key]);
+//    }
+//    var ary = [1,2,3,4]; //
+//    function fn(ary) {
+//        console.log(ary)
+//        // ary : 和外面的数组地址
+//        ary[0] = 0;
+//        ary = [0];
+//        ary[0] = 100;// [100]
+//        return ary;
+//    }
+//    console.log(fn(ary));// [100]
+//    console.log(ary);//[0,2,3,4]
+
+    // 操作语句
+     // 三个判断 ：
+//    1==1
+//    if("70px"){
+//        // 条件中只有一个值，那么就是直接转布尔
+//         console.log(1)
+//    }else if(1==1){
+//
+//    }else{
+//
+//    }
+    // 三元运算符
+    //？ 前面是条件，后面是条件成立执行的语句，冒号后面是条件不成立执行的语句
+    // switch  case  : 绝对比较
+//    switch (num){
+//        case 3:
+//            // num === 3;
+//            break;
+//        case 5:
+//            break;
+//        default :
+//
+//    }
+
+    // 循环 ：
+    // for(var i=0;i<6;i++){
+         //循环体
+
+    //}
+   // console.log(i) // 6
+    // 1.初始化变量
+    // 2.条件判断
+    // 3.执行循环体、
+    // 4.i++
+//    for(var i=0;i<5;i++){
+//
+//        // i=0  外面循环一次，里面循环7次
+//        for(var j=0;j<7;j++){
+//            console.log(j) // 7 5*7 = 35
+//        }
+//    }
+
+    // for  in  : 遍历对象
+//    for(var key in obj){
+//        obj[key]
+        // 如果对象中有数字，先把数字遍历出来
+//    }
+    // while
+
+//    while(i<4){
+//
+//    }
+    // document.getElementById()
+
+
+    // 函数L: function : 定义一个功能，定义一个方法；
+    // 函数的封装： 高内聚，低耦合；减少冗余的代码；
+    // 定义函数
+    // 地址类型
+//    var num =10;
+//    var num =19;
+//    console.log(num)
+//    function sum() {
+//        console.log(1)
+//    }
+//    function sum() {
+//        console.log(2)
+//    }
+//    sum();
+
+    //
+    //函数的形参： 入口；
+    // 函数天生自带的参数集合arguments
+
+//    function sum(num1,num2) {
+//        console.log(num1+num2) // 1,2
+        // arguments 对象数据类型的 typeof  arguments --> "object"
+//    }
+//    sum(1,2)
+//    sum(10,10)
+
+//    function sum() {
+//        var total = 0;
+//        for(var i=0;i<arguments.length;i++){
+//            var cur = Number(arguments[i]);
+//            if(!isNaN(cur)){
+//                total += cur;
+//            }
+//        }
+//        return total;
+//
+//    }
+//    sum(1,2,"34","98px",[])
+    // return  : 函数的返回值；
+    //
+    function sum() {
+        var  num =12;
+        return num;
+    }
+    console.log(num) // num is not defined
+    var a = sum()
+    console.log(a);//12
+    // 闭包机制： 当函数执行时，会形成一个私有的作用域，里面里面私有变量不被外界干扰；，这种机制--> 闭包;
+
+    // 检测数据类型 ：
+    // typeof  : 不能检测对象中具体数据类型 typeof [] --> "object"
+      // typeof null --> "object";
+    // instanceOf :判断实例是否属于某个类
+    // constructor :
+    // Object.prototype.toString.call();
+
+
+
+</script>
+</body>
+</html>
