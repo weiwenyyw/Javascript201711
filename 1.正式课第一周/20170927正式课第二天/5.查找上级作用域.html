@@ -19,39 +19,45 @@
 //    }
 //    var f = sum();
 //    f();
-    console.log(total)// undefined
-    var total =100;
-    function sum() {
-        console.log(total) //100
-        total +=200;
-        console.log(total) // 300
-        total =300;
-        console.log(total)//300
-
-    }
-    sum()
-    console.log(total)// undefined
-    var total =100;
-    function sum() {
-        console.log(total) // undefined
-        total +=200;
-        console.log(total)  // NaN
-        var total =300;
-        console.log(total)  // 300
-    }
-    sum()
+//    console.log(total)// undefined
+//    var total =100;
+//    function sum() {
+//        console.log(total) //100
+//        total +=200;
+//        console.log(total) // 300
+//        total =300;
+//        console.log(total)//300
+//
+//    }
+//    sum()
+//    console.log(total)// undefined
+//    var total =100;
+//    function sum() {
+//        console.log(total) // undefined
+//        total +=200;
+//        console.log(total)  // NaN
+//        var total =300;
+//        console.log(total)  // 300
+//    }
+//    sum()
    // 函数体重定义的变量和形参都是私有变量；
 
-    var total =100;
-    function sum(total) {
-        console.log(total) // undefined
-        total +=200;
-        console.log(total)  // NaN
-        total =300;
-        console.log(total)  // 300
-    }
-    sum()
+//    var total =100;
+//    function sum(total) {
+//        console.log(total) // undefined
+//        total +=200;
+//        console.log(total)  // NaN
+//        total =300;
+//        console.log(total)  // 300
+//    }
+//    sum()
 
+
+    function sum(num) {
+        console.log(num)//100
+        var num=10;
+    }
+    sum(100)
 
 
 </script>
