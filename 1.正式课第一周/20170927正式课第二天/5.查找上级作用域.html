@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  查找 上级作用域： 首先要看私有变量，如果这个私有作用域不存在，往上级作用域去查找；如果上级作用域也不存在这个变量，那么会继续往上一级查找，直到window，如果window也没有，就报错；--> 作用域链
+
+    // 上级作用域：与函数在哪执行没有任何的关系，只需看函数在哪定义的；
+//    var total =100;
+//    function sum() {
+//        var total =200;
+//        return function () {
+//            console.log(total)// undefined
+//            var total=0;
+//        }
+//    }
+//    var f = sum();
+//    f();
+    console.log(total)// undefined
+    var total =100;
+    function sum() {
+        console.log(total) //100
+        total +=200;
+        console.log(total) // 300
+        total =300;
+        console.log(total)//300
+
+    }
+    sum()
+    console.log(total)// undefined
+    var total =100;
+    function sum() {
+        console.log(total) // undefined
+        total +=200;
+        console.log(total)  // NaN
+        var total =300;
+        console.log(total)  // 300
+    }
+    sum()
+   // 函数体重定义的变量和形参都是私有变量；
+
+    var total =100;
+    function sum(total) {
+        console.log(total) // undefined
+        total +=200;
+        console.log(total)  // NaN
+        total =300;
+        console.log(total)  // 300
+    }
+    sum()
+
+
+
+</script>
+</body>
+</html>

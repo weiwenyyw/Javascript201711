@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.栈内存 堆内存
+    // 在页面加载HTML时，首先会形成一个全局的作用域（执行环境），然后进行预解释，预解释完成之后，代码从上到下开始执行；
+    // 基本数据类型值存储到栈内存中；
+    // 引用数据类型存储到堆内存中；
+    // 全局作用域和私有作用域都是栈内存
+//
+//    var a =19;
+//    var str = "zhongguo";
+//    var obj = {};
+//    console.log(window.a)
+    // 私有作用域
+    // 1.当函数执行的时候会形成私有作用域；
+    // 2.形参赋值
+    // 3.进行预解释
+    // 4.代码从上到下执行
+
+//    function fn(){
+//        var b = "zhufeng"
+//    }
+//    fn();
+//    console.log(window.b)
+//    // 堆内存： 存储大量数据或信息
+//    var obj = {}
+    // 首先开辟一个空间地址，指向堆内存
+    // 把对象中的键值对存进去
+    // 把地址赋值给变量
+    var a ="zhufeng"
+    function fn(num) {
+        var b =1;
+        console.log("hello world")
+    }
+    fn(12)
+    // 预解释进行
+    // 首先开辟一个空间地址
+    // 把函数体中代码当做字符串进行
+    // 把这个空间地址给了函数名；
+//    console.log(window.fn)
+
+    // 函数执行
+
+    // 私有作用域
+    // 1.当函数执行的时候会形成私有作用域；
+    // 2.形参赋值
+    // 3.进行预解释
+    // 4.代码从上到下执行
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

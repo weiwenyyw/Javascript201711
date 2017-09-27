@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //  把珠峰的仓库地址 https://github.com/zhufengpeixun/Javascript201711  fork
+
+    // git clone https://github.com/你的用户名/Javascript201711
+    //git remote -v
+    //https://github.com/你的用户名/Javascript201711
+    // git remote add zhufeng https://github.com/zhufengpeixun/Javascript201711
+    //git remote -v  :
+    // 拉取珠峰的代码
+    // git pull zhufeng master
+    // git add  -A 添加到历史区
+    // git commit -m"33"
+    // git push origin master
+
+
+    // 预解释： 变量提升
+
+    // 当加载页面HTML形成一个全局作用域，在代码执行之前，先对带var 和function的进行提前的声明，function不仅声明而且还进行定义；
+    //    console.log(num);// undefined
+    //    var num =10;
+    //    console.log(num);
+    //    console.log(sum)// sum 存储的是一个地址；
+    //    function sum() {
+    //
+    //    }
+    // 变量只声明不进行赋值，那么默认值就是undefined；
+    var total;
+    console.log(total);// undefined
+
+
+</script>
+
+</body>
+</html>
