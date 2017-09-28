@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #box{
+            width:100px;
+            height:100px;
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    // this --> 在函数中，代表当前函数执行的主体；或者是谁让这个函数执行的
+
+//    function eat(name,vege) {
+//        console.log(name+"爱吃"+vege)
+//    }
+//    eat("小明","白菜")
+
+
+
+//    var oBox  = document.getElementById("box");
+//    oBox.onclick = function () {
+//        console.log(this);// 对象数据类型的；输出当前被点击的那个元素；
+//    }
+    // 1.给元素的某个事件（点击，滑过，滑出...）绑定方法，那么方法中的this，指向当前被绑定的元素；
+    // 2.判断方法中的this，需要看当前函数前面是否有“.”,有的话，点前面是谁，this就是谁，如果没有点，那么this就是window；
+    // 3.自执行函数中的this永远指向window；
+    //4.全局下的this指向window；
+//    (function () {
+//        console.log(this)// window
+//    })()
+
+//
+//    var obj = {
+//        num:3,
+//        fn : (function () {
+//                console.log(this)// window
+//                return function () {
+//                    console.log(this)
+//                }
+//            })()
+//    }
+//    obj.fn();  // this --> obj
+//    var f = obj.fn;
+//    f()// -->this:window
+    function sum() {
+        console.log(this)// window
+    }
+    sum()
+    console.log(this)
+
+
+</script>
+</body>
+</html>

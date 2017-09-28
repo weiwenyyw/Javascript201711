@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+//    fn()
+//
+//    function fn() {
+//        console.log("输出1")
+//    }
+//    fn()
+//    function fn() {
+//        console.log("输出2")
+//    }
+
+//    var  a =10;
+//    console.log(a)//10
+//    var a =30;
+    // 单例模式：把描述同一件事物不同属性放在一个命名空间下，起到了分组的作用。person1和person2 也就是对象的名字，我们成为“命名空间”
+    //
+
+//    var person1 = {
+//        name : "冯更更",
+//        sex : "男",
+//        age : "1998",
+//        tecnology : "我会写js"
+//    }
+
+//    var person2 = {
+//        name : "杨曜维",
+//        sex : "男",
+//        age:"1980",
+//        tecnology:"我会写js"
+//    }
+//    function sum() {
+//
+//        console.log("求和")
+//    }
+
+//    function sum() {
+//        console.log('给对象添加属性名')
+//    }
+//
+//    var niu = {
+//        sum : function () {
+//            console.log("求和")
+//        }
+//    }
+
+//    var wang = {
+//        sum : function () {
+//            console.log('给对象添加属性名')
+//        },
+//        fn:function () {
+//
+//        }
+//    }
+//
+//    niu.sum()
+//    wang.sum();
+
+
+
+
+    var a =(function () {
+        function sum() {
+            console.log(1);
+        }
+        return {
+            sum : sum
+        };
+    })();
+
+    var b =(function () {
+        function sum() {
+            console.log(2)
+        }
+        return {
+            sum : sum
+        }
+
+    })();
+    a.sum()
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 工厂模式： 批量生产 ,实现函数的封装（低耦合，高内聚）
+    function createPerson(name,age) {
+        // 初始化一个空对象
+        var obj ={};
+        obj.name = name;
+        obj.age = age;
+        obj.technology =obj.name+ "会写js"
+        return obj;
+    }
+    var a =createPerson("冯更更",18);
+    var b = createPerson("杨曜维",20);
+
+    console.log(a);
+    console.log(b);
+
+
+</script>
+</body>
+</html>
