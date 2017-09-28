@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 预解释： 在全局作用域下，把带var和function的变量进行变量提升
+//    console.log(num)// undefined
+//    var num =0;
+//    console.log(num)
+//    console.log(str) // str is not defined
+//    str = "zhufeng"
+//    console.log(str)
+    // function 不仅进行变量声明还进行定义；
+//    function total() {
+//
+//    }
+    // 函数中的预解释是在函数执行，形成私有作用域，并且形参赋值之后进行的
+//    function sum() {
+//        var a =1;
+//        function total1() {
+//
+//        }
+//        total1()
+//    }
+//    sum()
+    // 1.不管条件是否成立，都要进行预解释，但是在最新版本浏览器function只声明，不定义
+//    console.log(fn)// undefined
+//    if(true){
+//        function fn() {
+//
+//        }
+//    }
+    // 2.等号右边的不进行预解释
+//    var fn = function () {
+//
+//    }
+    // 3.return 后面的内容不进行预解释；但是return下面的代码需要进行预解释
+//    function total() {
+//        return function () {
+//
+//        }
+//        var a =1;
+//    }
+    // 4.匿名函数不进行预解释
+    // 自执行函数不进行预解释
+    // 5.如果变量名字重复,只声明一次，但是function还要进行重新定义；
+//    var a =0;
+//    var  a =9;
+
+    //  栈内存堆内存
+    // 全局作用域和私有作用域是栈内存；
+    // 页面加载-->形成全局作用域-->预解释-->代码从上到下执行；
+    // 函数执行 ： 先形成私有作用域--> 形参赋值---> 预解释-->代码从上到下执行；
+    // 上级作用域： 跟函数在哪执行没有关系，只需看函数在哪定义的
+    // 全局变量和私有变量
+    // 怎么判断是私有变量： 1.看当前变量是否是形参，2.看当前变量有没有被var过；
+
+//    var  total = 100;
+//    function sum() {
+////        var total =10;
+//        return function () {
+//            console.log(total)
+//        }
+//    }
+//    var f = sum();
+//    f();
+
+//    function bar(num) {
+//        console.log(num);
+//        var num =10;
+//        console.log(num);
+//    }
+//    bar(100)
+//    (function () {
+//        function sum() {
+//            console.log(1)
+//        }
+//       window.sum = sum;
+//    })()
+//    sum()
+
+    // 作用域销毁： 1.函数return一个引用数据类型的 2. 并且被外界接收；
+    function fn() {
+        // 这是第一个不销毁的作用域
+        return function () {
+
+        }
+    }
+    var f = fn();//
+    fn()
+    fn()()
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

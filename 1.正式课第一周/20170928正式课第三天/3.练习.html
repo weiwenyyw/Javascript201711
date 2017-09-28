@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//        var name = "珠峰";
+//        var age = 8;
+//        (function (name,age) {
+//            name = "中国";
+//            age = 5000;
+//            window.name = name;
+//            return function () {
+//                console.log(name);// "中国"
+//                console.log(age);// 5000
+//            }
+//        })(name,age)();
+//        console.log(name,age); // "中国"  8
+    var obj = {
+        num: 3,
+        bar: (function () {
+            var n = 5;
+            // 当加载这个对象，这个作用域形成
+//            return function () {
+//                console.log(n += 2);
+//            }
+        })()
+    };
+    obj.bar();//7
+    obj.bar();//9
+    var fn3 = obj.bar;
+    fn3(); //
+    fn3();
+</script>
+</body>
+</html>
