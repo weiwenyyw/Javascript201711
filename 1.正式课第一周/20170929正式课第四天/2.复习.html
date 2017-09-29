@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+   // this : 函数在哪定义没有关系，要看函数在哪执行的。
+    // 1.给元素的事件行为绑定方法，方法中的this指向当前的元素
+   // 2.自执行函数中this，永远指向window
+   // 3.看方法前面执行有没有".",点前面是谁this就是谁，没有就是window
+   // 4. 全局作用域中this指向window
+   // 5.定时器中的this永远指向window
+//   var setTimeout =1;
+//
+//   setTimeout(function () {
+//       console.log(this)// window
+//   },1000)
+
+    //console.log(this)//window
+
+    // 单例模式：
+    var person = {// "命名空间"
+
+    };
+    var person1 = {
+
+    }
+    // 利用闭包的原理：避免变量及代码冲突
+   // 闭包：1. 保护里面的私有变量不受外界干扰
+        // 2.储存值，形成不销毁的作用域，储存变量；
+
+
+    // 工厂模式：批量生产
+    // 把同一功能的代码放到一个函数中，当想实现这个功能时，只需执行这个函数执行即可。“函数封装”
+
+    function create(name,age) {
+        var obj = {};
+        return obj;
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

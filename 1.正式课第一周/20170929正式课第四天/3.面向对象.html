@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    var oBox  = document.getElementById("box");
+    // 所有后台语言都是面向对象开发的  C  C++ java  python  php  .net VB  Vf  ...
+    // 面向对象 : 类的继承、封装、多态；
+    // 对象：在js中万物皆对象；
+    // 类 ： 是对象的一个具体划分；
+    // 实例： 指的是类中某一个具体事物
+//    var ary = [];// ary 是数组类的一个实例；
+    // 所有的实例都是对象数据类型的；
+    //内置类首字母要大写
+    //内置类： Number  String  Boolean  Null Undefined
+    //       Object Function  Array  Regexp  Date...
+    // Math 不是一个类，是方法；
+//    var num =10;
+//   num.pop()
+    // 类的继承： 子类继承父类的属性和方法；
+    // 类的封装 ： 把相同功能的代码放到函数中，当想实现这个功能的时候，直接执行这个函数“函数的封装”--->"低耦合高内聚"；
+    // 类的多态： 类的多种形态；重载和重写
+    // 类似重载；
+
+    // 重写： 子类重写父类的方法；
+
+    function sum(num) {
+        if(typeof num === "undefined"){
+            console.log("求和")
+        }
+
+    };
+    sum()
+    //Object  是基类 也是最顶层的类；所有的实例最终都会指向Object；
+
+
+
+
+   // 字面量方式创建
+
+//    var ary = [];
+//    var obj = {};
+//    var num = 1;
+    // 实例创建
+     // 在类的前面加一个new，就是创建一个实例的意思；
+//    var ary1 = new Array();
+//    var obj1 = new Object();
+//    var num = new  Number(100);
+//    console.log(num instanceof Number);
+//    console.log(ary1);
+//    console.log(obj1);
+
+
+    // instanceof : 判断某个实例是否属于某个类的；
+    // 检测基本数据类型只能检测通过实例创建的变量，字面量创建的不能检测出来；
+//    console.log(ary instanceof Array);
+//    console.log(obj instanceof Array);
+//    console.log(num instanceof Number);
+
+
+    //    var a =1;
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
