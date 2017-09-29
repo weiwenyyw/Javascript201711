@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var x = 1000;
+    function Fn() {
+
+        this.x = 100;
+        this.getX = function () {
+            console.log(this.x)
+        }
+    }
+    //var f = Fn();// undefined
+    var f = new Fn;
+    var f1 = new Fn;
+    console.log(f.getX===f1.getX)
+//    console.log(f)// 实例
+//    f.getX();
+//    var ff = f.getX;
+//    ff()// 1000
+
+    // 1.如果类不需要传参数，后面括号可以省略；类也是执行的；
+
+    //2.类中实例属性的方法中的this，指向当前实例，一定要看怎么执行的；
+
+    // 3.这个类中私有变量和当前的实例没有任何的关系；
+
+    // 4.在类中，如果return出一个基本数据类型的值，那么new +类返回还是那个实例；如果return一个引用数据类型值，那么实例会被覆盖掉，new + 类的返回值就是return的对象；
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

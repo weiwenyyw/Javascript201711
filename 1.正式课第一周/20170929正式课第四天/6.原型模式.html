@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    function Fn() {
+//        this.x = 100;
+//
+//    }
+//    Fn.prototype.getX = function () {
+//        console.log(this.x)
+//    }
+    // 构造函数实现了实例和实例之间属性和方法都不相同，都是私有属性-->实例识别
+
+    // prototype : 属性值是一个对象数据类型的值；
+//    console.log(Fn.prototype);// {constructor:Fn}
+//    console.log(Fn instanceof Object);// 函数也是一个实例
+//    var f = new Fn;
+//    var f1 = new Fn;
+//    f.getX()//100   f.__proto__.getX()
+//    f1.getX()//100
+//    console.log(f.__proto__.getX === f1.getX)
+    // hasOwnProperty : 检测当前属性是否是私有属性，返回布尔值；如果是私有的返回true，如果不是返回false;
+//    console.log(f.hasOwnProperty("getX"));
+    // in : 不仅可以检测私有，还可以检测出公有；
+//    console.log("getX" in f);
+
+
+    // 1.每一个函数数据类型（普通函数、类（内置类、自定义类））都天生自带一个prototype属性；
+    // 2.prototype属性天生自带一个constructor 属性，属性值是当前原型所对应的那个类
+    // 3.每一个对象数据类型的都天生自带一个__proto__属性，它的属性值，指向当前实例所对应的那个类的原型；
+
+//    function sum() {
+//
+//    }
+//    var obj = {age:8}
+
+
+    //获取对象属性名对应的属性值 对象.属性名；
+    //  对象.属性名 : 首先查看是否是自己的私有属性，如果不是，实例会通过__proto__这个属性，去当前实例的对应的类的原型上去继续查找，如果类的原型上不存在，那么会继续通过__proto__ 往上级去查找，直到找到Object.prototype,如果这个也没找到，那就报错；这种查找的机制就是“原型链模式”；
+    function Fn() {
+        this.x = 100;
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.x)
+    }
+    var f =new  Fn;
+    var f1 = new Fn;
+    //console.log(f1.__proto__.constructor === Fn);
+    console.log(f1.getX)
+    //f1.__proto__.getX === Fn.prototype.getX // true
+    //f1.getX === Fn.prototype.getX// true;
+    //在IE10及以下，有__proto__这个属性，IE给禁用，不兼容;
+
+
+    var  ary = [12,90,89,0];
+
+    ary.pop()
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

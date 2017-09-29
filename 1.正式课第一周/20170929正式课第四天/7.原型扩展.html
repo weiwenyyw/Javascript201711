@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Fn() {
+        //this-->f(实例)
+        this.x = 100;
+    }
+//    Fn.prototype.getX  = function () {
+    //        console.log(this.x)
+    //    }
+    //下面会把Fn 原型的属性值重新覆盖，失去了constructor,所以手动添上；
+    Fn.prototype = {
+        constructor:Fn,
+        getX : function () {
+
+        }
+    }
+    //Fn()// 普通函数执行
+    var f =new Fn;// 实例（对象）
+    var f1 = new Fn;
+
+
+    //hasOwnProperty: 检测是否是私有私有属性；
+    //
+//    console.log(hasPublicProperty(f, "getX"));;
+//    console.log(f.hasOwnProperty("getX"));// true
+//    // 判断是否是公有属性的方法
+//    function hasPublicProperty(obj,property) {
+//        if(obj.hasOwnProperty(property)){
+//            return false;
+//        }else{
+//            return true;
+//        }
+//    }
+
+//    f.getX()
+
+
+
+</script>
+</body>
+</html>
