@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+<script>
+    // 函数的定义： 是一个方法功能；
+    // 获取哥哥元素节点 ：
+
+    function bar(num) {
+
+        var total =0
+        for(var  i=1;i<num;i++){
+
+            total +=i;
+        }
+        return total;//
+//        console.log(num)
+    }
+    bar(800);
+
+    bar(9000)
+    // 函数执行一次，会开辟一个新的栈内存，形成一个新的作用域；
+    //形成私有作用域；
+    // 形参赋值
+    // 预解释
+    // 代码从上到下执行；
+//    var ary = [12,23,45];
+//    ary.splice(2,1)// [45]
+//    var str = "r-2-r-t";
+//    str.split("-") // ["r,2,r,t"]
+
+    // 获取上一个哥哥的元素节点：
+    //setTimeout
+    var move = function () {
+
+    }
+    var timer = setTimeout(move,1000);
+    clearTimeout(timer)
+    // setInterval
+
+    // 数据类型
+    // typeof   null -->"object"
+
+    // typeof undefined --> "undefined"
+    // instanceof  : 判断当前实例是否属于某个类的；
+    // constructor :
+    // Object.prototype.toString.call();
+
+
+    // 1-100 是3倍数的和；
+//    var total =0;
+//    for(var i=0;i<100;i++){
+//        if(i%3===0){
+//            total +=i;
+//        }
+//    }
+    function sum(num) {
+        // 结束条件
+        if(num ===2){
+            return 0;
+        }
+        if(num%3===0){
+            return num +sum(num-1);
+        }else{
+            return sum(num-1)
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

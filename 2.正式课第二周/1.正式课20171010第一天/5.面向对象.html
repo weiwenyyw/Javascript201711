@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 面向对象： 是一种编程的思想；基于对象
+    // 对象：在js中，万物皆对象（是一个对象）
+    // 类 ： 对象具体的细分；
+    // 内置类： Number String  Boolean  Null  Undefined Array  Object  Function  RegExp Date...
+    console.log(Number)// 类 一个方法
+    var num = 1;
+
+    // 和自定义类 ；
+    function Sum() {
+
+    }
+    new Sum;
+
+    // 实例： 是类的某一个具体事物；
+    // 单例模式：
+//    var name = "张三";
+//    var age = 24;
+////    var name  = "李四"
+//    var person1 = {
+//        name : "张三",
+//        age : "24",
+//        writeJs :function () {
+//            console.log("我会VUE")
+//        }
+//    }
+//    var person2 = {
+//        name : "李四",
+//        age : "26",
+//        writeJs :function () {
+//            console.log("我会REACT")
+//        }
+//    };
+//    person1.writeJs()
+//    person2.writeJs()
+//
+//    var p1 = {
+//        // 去重
+//        unique : function () {
+//
+//        }
+//    }
+//    var p2 = {
+//        // 排序
+//        unique:function () {
+//
+//        }
+//    }
+//    p1.unique();
+//    //工厂模式：把相同功能的代码放到一个函数中，当想实现相同的功能，只需执行这个函数即可；“函数的封装”---> "低耦合，高内聚"
+//    // 实现批量的生产
+//    function createPerson(name,age,tech) {
+//        var obj = {};
+//        obj.name = name;
+//        obj.age = age;
+//        obj.writeJs = function () {
+//            console.log("我会"+tech)
+//        };
+//        return obj;
+//
+//    }
+//    var p1 = createPerson("张三",24,"VUE");
+//    var p2 = createPerson("李四",26,"REACT");
+
+    // 构造函数模式 :
+//    function Create(name,age) {
+//       this.name = name;
+//       this.age = age;
+//       this.writeJs = function () {
+//           console.log("我会写js")
+//       }
+//    }
+////    console.log(create("张三", 28));
+//    var p1 = new Create("张三", 28);
+//    var p2 = new  Create("李四",30);
+//    console.log(p1.writeJs === p2.writeJs);
+    // 构造函数里面不需要创建对象，也不需要return这个对象；
+    // 构造函数执行的时候，浏览器会默认创建一个对象，并且最后把这个对象返回
+
+    //instanceof  检测当前实例是否属于某个类的，返回一个布尔值 true FALSE,局限性： 不能检测基本数据类型通过字面方式创建的变量；
+
+  // 类 一个方法
+    // 字面量方式
+//    // 实例创建
+//    var num = 1;
+//    console.log(num instanceof  Number)// false
+//    var num1 = new Number(1)
+//    console.log(num1 instanceof Number);
+
+//    var  ary = [];
+//    var ary1 = new Array;
+//    ary1.push(13)
+//    console.log(ary1);
+//    console.log(ary instanceof Array);
+//    console.log(ary1 instanceof Array);
+//
+//    var ary = [1];
+//    var ary2 = [0];
+    // push 是一个公有的方法；类的原型（原型模式）
+        function Create(name,age) {
+           this.name = name;
+           this.age = age;
+        }
+        Create.prototype.writeJs = function () {
+            console.log("我会写js")
+        }
+        var p1 = new Create("张三", 28);
+        var p2 = new  Create("李四",30);
+        console.log(p1.writeJs === p2.writeJs);
+        // 所有的实例都是对象数据类型的；
+
+        // 1.所有的函数数据类型（普通函数、类）都天生自带一个prototype属性，并且是一个对象数据类型的
+       // 2.prototype属性天生自带一个constructor,属性值是指向当前原型所对应的那个类’；
+       // 3.所有的对象数据类型（实例、普通对象、数组）都天生自带一个__proto__的一个属性，属性值指向当前实例所对应的那个类的原型；
+    // 所有实例都是对象数据类型的；
+
+    // console.log(Number instanceof Function);// true
+    ary.push()
+
+
+</script>
+</body>
+</html>

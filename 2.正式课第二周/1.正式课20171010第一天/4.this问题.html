@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // this
+//    console.log(this)
+
+//    function sum() {
+//        console.log(this)// window
+//    }
+//    window.sum()
+//
+//
+//    var obj = {
+//        bar : {
+//            fn : function () {
+//                console.log(this)
+//            },
+//            num :2
+//        },
+//        num : 1
+//    }
+    var obj1 = {
+        bar : function () {
+            console.log(this)
+        }
+    }
+//    obj.bar.fn()
+    // 1.全局下的this指向window
+    // 2.函数中的this，首先看当前函数执行前面是否有“.”,点前面是谁this就是谁;
+    // 3.给元素事件绑定方法，方法中的this指向被绑定的这个元素；
+    // 4.自执行函数中的this永远指向window
+    // 5.定时器中的this指向window，因为setTimeout 和setInterval 都是window这个对象下的属性方法；
+    //6. 类中this，指向当前的实例；
+    var obj = {
+        bar: (function () {
+                console.log(this)// window
+                return function () {
+                    console.log(this)
+                }
+            })()
+    };
+    obj.bar()
+    setTimeout(function () {
+        console.log(this)// window
+    },1000)
+    // 上面bar 存储的是自执行函数的返回值，当obj 开辟空间给bar 赋值时，或者加载这一行代码时，自执行函数就执行了
+
+    var number= 2;// 4  8
+    var obj = {
+        number : 4,// 8
+        fn1 : (function () {
+            this.number*=2;
+            number = number*2;
+            var number = 2;
+            return function () {
+                this.number*=2;
+                number*=3;
+                console.log(number)
+            }
+        })(),
+        fn2 : function () {
+            this.number*=2;
+        }
+    }
+    var fn1 = obj.fn1;
+    fn1();//6
+    obj.fn1();// 18
+    console.log(window.number);
+    console.log(obj.number)
+
+ //  任何数和undefined运算都是NaN
+
+</script>
+</body>
+</html>

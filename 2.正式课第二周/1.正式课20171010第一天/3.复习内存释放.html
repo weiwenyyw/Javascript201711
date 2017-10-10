@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 内存 ： 栈内存 堆内存；
+    // 栈内存： 全局作用域、私有作用域；
+    // 堆内存： 对象函数对应的空间地址，一般用于大量的数据；
+    var obj ={name:"zhufeng"}
+    // obj = null; 手动清空；
+    // 首先开辟一个空间地址
+    // 把对象中键值对存储到这个地址下;
+    // 把开辟的地址给这个对象；
+    function sum() {
+        console.log(10)
+        return function () {
+            console.log(1)
+        }
+    }
+    sum();
+    sum();
+    // 首先开辟空一个空间地址；
+    // 把函数体中代码存进去
+    // 把这个地址给了函数名
+
+    // 堆内存 ：
+
+    // 栈内存
+    // 全局作用域： 当浏览器加载HTML时会形成一个全局作用域，属于不销毁作用域，当关闭当前的页面的时候，作用域才会销毁
+
+    // 私有作用域：
+    // 函数执行
+    //- 形成私有作用域-> 行参赋值--> 进行变量提升--> 代码从上到下执行；
+    // 函数每执行一次，都会形成新的私有作用域，相互之间不受影响；
+
+
+
+    // 立即销毁；
+    // 不立即销毁；
+    // 不销毁作用域： 函数return出一个引用数据类型的值，并且被外界接收，当前形成这个作用域属于不销毁的作用域；
+
+    function fn() {
+        var i=10;// 11
+        return function (num) {
+            console.log(num+ ++i)
+        }
+    };
+    var  f = fn();
+    f(10);//21
+    f(20);//32
+    fn()(10);
+    fn()(20)
+
+    // 选项卡 ：
+    for(var i=0;i<oLis.length;i++){
+        oLis[i].zhufeng = i;
+        oLis[i].onclick = function () {
+            changeTab(this.zhufeng)
+        }
+    }
+    // 不销毁的作用域
+    // 让点击的方法的上级作用域是一个不销毁的作用域，并且把当前i的值存储到这个不销毁的作用域中；
+    for(var i=0;i<oLis.length;i++){
+//        (function(j){
+//
+//            oLis[i].onclick = function () {
+//                changeTab(j)
+//            }
+//        })(i)
+        oLis[i].onclick = (function (j) {
+            // 当前作用域是存储i的值
+            return function () {
+                changeTab(j)
+            }
+        })(i)
+
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
