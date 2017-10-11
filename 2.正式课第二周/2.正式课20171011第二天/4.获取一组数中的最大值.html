@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    var ary = [12,56,3,5,67,45];
+//    console.log(Math.max(12,56,3,5,67,45));
+
+
+    //1.排序sort
+
+//    ary.sort(function (a,b) {
+//        return a-b
+//    });
+//    console.log(ary[ary.length - 1]);
+
+    // 2.假设法
+    // 假设数组的第一项是一个最大值，然后让数组的每一项和这个进行比较，如果发现当前项比max 这个变量值大，对max 重新赋值当前这一项；
+
+    var ary = [12,56,3,5,67,45];
+    var max= ary[0];// 12  56
+    for(var i=1;i<ary.length;i++){
+        var cur = ary[i];
+//        if(cur>max){
+//            max = cur;
+//        }
+        cur>max ?max = cur:null;
+    }
+    console.log(max);
+
+
+</script>
+</body>
+</html>

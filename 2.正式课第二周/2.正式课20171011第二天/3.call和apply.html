@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 严格模式
+//    "use strict"
+      // call apply  bind : 改变this关键字；
+      // 是一个方法，存在于Function这个内置类的原型上；
+      // 所有的函数可以调用Function这个类原型上的方法；
+      var obj = {index:10}
+//
+//    function fn1() {
+//        console.log(this)// window: window 是函数执行主体
+//    }
+//    fn();// window
+
+
+    //console.log(call)// call is not defined
+      function fn2(num2) {
+          console.log(num2);
+          console.log(2)
+      }
+
+      function fn1(num1,num2,num3) {
+          console.log(num1,num2,num3);//0
+//          console.log(1);
+          console.log(this);//fn2
+      }
+      var fn =fn1.bind(fn2,1,2,3);
+      fn();
+
+
+    // 非严格模式
+      //如果call 没有传参数，那么方法中的this还是window
+      // 如果传递参数null和undefined，那么方法中的this指向window；
+    // 如果call传参数，那么第一个参数是谁，方法中的this就是谁；如果fn1中也需要参数，那么把参数放进call 后面括号中，用逗号依次隔开；
+   // call 方法原理：
+    // 首先fn1通过原型链找到Function这个类原型上的call方法，然后让call方法执行；
+    // call方法执行的时候，让call方法传进去第一个参数变成call方法中fn1的this；然后让call方法中的this执行；
+    // 严格模式：
+    // 如果call没有传参数，那么方法中的this指向undefined
+    // 如果方法中传的是null,this 指向null,传undefined，this就是指向undefined；
+
+    // apply  :
+    // apply 和call方法的区别： 传参数不一样,当不止有一个参数，把第二个及以后的参数放进一个数组中，一块传递进去；
+    // bind : 不兼容IE678；预处理this关键字，方法没有立即执行；
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
