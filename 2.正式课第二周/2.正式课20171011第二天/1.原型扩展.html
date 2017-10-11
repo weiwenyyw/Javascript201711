@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" class="box">
+    <div id="tab"></div>
+</div>
+<script>
+    var oBox = document.getElementsByClassName("box");
+    console.log(oBox);
+    // 面向对象；
+    // 类分为内置类和自定义类，都是函数数据类型的
+    // 实例都是对象数据类型的；
+    
+    function fn() {
+        
+    }
+    console.log(Number instanceof Function);
+    console.log(Array instanceof Function);
+    console.log(String instanceof Function);
+    function Fn() {
+
+    }
+    var f = new Fn;
+    console.log(Fn instanceof Function);
+    var ary = [];
+
+    // Object  Function ;
+    // Object 是一个基类;是所有对象数据类型的基类；
+
+    // 所有的函数数据类型（普通函数、内置类、自定义类）都是Function 的一个实例；Function 是所有函数的基类
+    // 所有的对象数据类型（普通对象、实例、数组、正则、函数的原型...）是Object这个基类的一个实例；实例是对象数据类型的；
+
+    //所有的函数不仅有prototype属性，而且有__proto__这个属性
+
+    function Fn() {
+
+    }
+    var f = new Fn;
+    Fn.call()
+
+    var ary = []
+    ary.push()
+
+    // 1.元素对象和Object
+    // 元素对象有__proto__ 这个属性，最终指向Object
+    //console.log(oBox.getElementById("tab"));//oBox.getElementById  is not  a function 在当前这个元素对象的原型链上不存在这个方法；有getElementsByClassName  getElementsByTagName...
+
+    // HTMlCollection :集合  通过getElementsByClassName 来获取的集合是HTMlCollection的一个实例
+
+    // 2.数据类型和面向对象
+    // ary 是Array一个实例；
+
+    var ary = [44,55,66]
+    // 对象数据类型（实例），具有__proto__这个属性；
+//    ary.pop()// pop 不是ary的私有属性；实际省略了__proto__
+//    ary.__proto__.pop()
+    //hasOwnProperty : 检测是否是私有属性方法
+    console.log(ary.hasOwnProperty("pop"));// false
+    var num = 12;
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

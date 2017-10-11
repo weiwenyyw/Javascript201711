@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    function fn() {
+//        this.num =100;
+//        this.getX = function () {
+//            console.log(this.num)
+//        }
+//    }
+//    fn.prototype.num=1000;
+//    fn.prototype.getX = function () {
+//        console.log(this.num)
+//    }
+//    fn.num =10;
+//    var f = new fn;
+//    fn.prototype.getX();
+
+//    console.log(x)
+    // 函数的多面性；
+    // 1.普通函数
+//    fn();
+//    console.log(x)//100
+    // 形成私有作用域--->形参赋值--> 预解释--> 代码从上到下执行；
+    //函数中this指向window
+    // 没有return返回undefined
+
+
+    // 2.类
+//    var f = new fn;
+//    console.log(f);
+    // 形成私有作用域--->形参赋值--> 预解释--> 代码从上到下执行；
+    // 类中的this指向实例；
+    // 没有return返回实例，如果有return  基本数据类型值，产生仍然一个实例；如果return引用数据类型，会默认把实例覆盖掉；
+
+
+    // 3.对象；
+//    var obj = {};
+//    obj.aa = 10;
+    // 如果属性名存在,那么就是修改，没有就是新增；
+//    fn.num =100;
+//    console.log(fn.num);
+    // 函数三种角色的练习
+    var num = 0;//200
+    function Fn(num) {
+        arguments[0] = 100;
+        this.num = 200;// window下的num
+        return num;
+    }
+    Fn.num = 400;
+    Fn.prototype.num = 300;
+    Fn.prototype.getNum = function () {
+        console.log(this.num);
+    };
+    var f = new Fn(num);// {num:200}
+    console.log(f.num);//200
+    f.getNum();//200
+    Fn.prototype.getNum();//300
+    console.log(num)//0
+    var n = Fn(num);
+    console.log(n);//100
+    console.log(num);//200
+
+
+</script>
+</body>
+</html>
