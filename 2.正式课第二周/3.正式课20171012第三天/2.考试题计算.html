@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 加载HTML时，形成全局作用域；进行预解释，把带var和function的进行变量提升
+//    var a;
+//    console.log(num);// undefined
+//    var a = 10;
+//    // 去局下定义一个变量，相当于window增加一个属性；
+//    if(!("num" in window)){// num 是否存于window这个对象下面
+//        var num = 12;
+//    }
+//    console.log(num);// undefined
+    // in  : 私有公有都返回true
+  //hasOwnProperty 判断是否是私有属性；
+//    var  obj = {age:1}
+//    obj.hasOwnProperty("age")
+
+//    function sum() {
+//        var a = 12;
+//        return;
+//    }
+//    console.log(sum());// undefined
+
+//    //|| : 逻辑或左右两边有一个为真，全为真
+//    if(1==1||2==1){
+//
+//    }
+    // 先看左边这个转布尔是true，直接取第一个值，如果是FALSE，不管转布尔是true还是FALSE，都直接取第二个；
+//    var a = NaN || 3;
+//    var ary = 10;
+//    ~function (ary) {
+//         ary =100;
+//        console.log(ary);
+//    }(ary)
+//    console.log(ary)
+//
+//    var a = b =10;
+//    b =12;
+//    console.log(a);
+//
+//    var a = b = [10]
+//    b.length--;
+//    console.log(a);
+
+    // 如果对象的属性名对应的属性值是自执行函数，如果自执行函数return一个引用数据类型，那么自执行函数形成的作用域是不销毁的；
+//    var num=1;//  4  // 14
+//    var obj={num:2};//22
+//    obj.fn=(function (num) {//num 2
+//        this.num=num*2;
+//        num++;// 3   4   5
+//        return function (n) {
+//            this.num+=n;
+//            num++;
+//            console.log(num);//4  5
+//        }
+//    })(obj.num);
+//    var fn=obj.fn;
+//    fn(10);//4
+//    obj.fn(20);// 5
+//    console.log(num, obj.num);
+
+
+    function Fn(num) {
+        this.x = this.y = num;
+    }
+//    Fn.prototype.sum = function () {
+//
+//    }
+//    console.log(Fn.prototype.constructor)
+//    Fn.prototype = {
+//        constructor:Fn,
+//        x: 20,
+//        sum : function () {
+//
+//        }
+//    }
+//    var  obj = {}
+//    console.log(obj.age);
+//    for(var i=0;i<InpList.length;i++){
+//        var  cur = InpList[i];
+//        cur.zhufeng = i;
+//        cur.onclick = function () {
+//            document.body.style.background = ary[this.zhufeng]
+//        }
+//
+//    }
+    for(var i=0;i<InpList.length;i++){
+        var  cur = InpList[i];
+        // 在绑定的方法的外面嵌套一层不销毁的作用域；（储存值的作用）
+        cur.onclick = (function(j) {
+            // 每一个作用域都保存一个i的值；
+           return  function () {
+                document.body.style.background = ary[j];
+            }
+        })(i)//  0 1 2
+    }
+
+
+</script>
+</body>
+</html>
