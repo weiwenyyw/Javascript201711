@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 函数三种角色 ： 普通函数、类、对象
+//    var obj = {}
+//    function fn1() {
+//        console.log(1)
+//    }
+//    function fn2() {
+//        console.log(2)
+//    }
+//    fn();
+//    var f = new fn;
+//    fn.a =10;
+    // call  apply  bind: 改变this关键字
+    // 三个方法在Function这个类的原型上；
+//    fn();// this -->window 当前函数执行主体，谁让fn执行的；
+//    fn.call(obj) // obj
+    // fn通过__proto__ 找到Function这个类原型上call,让call执行；
+    // call 执行的this是fn,让fn的this是call 传进的第一个参数
+    // 让fn执行
+//    fn() // window
+    var obj = {}
+    function fn1() {
+        console.log(1)
+    }
+    function fn2() {
+        console.log(this)
+        console.log(2)
+    }
+//    fn1.call.call(fn2);
+    fn1.call(fn2)
+    // 第二个call方法执行，里面的this就是fn1.call,让fn1.call里面的this变成fn2,
+    // 让fn1.call执行，改变里面的this，让里面的this（fn2）执行
+
+    //  call 是一个一个传进去的，apply是把除了第一个参数以外的其他参数，放进数组，一块传递进去；
+
+    // bind  ： 预处理this； IE678 不兼容；
+    var a = fn1.bind(fn2);
+    a()
+    var ary = [23,9,0,89,66,88]
+    // 求数组中的最大值：
+    // 1.排序
+//    ary.sort(function (a,b) {
+//        return a-b
+//    });
+//    console.log(ary[ary.length-1]);
+
+    // 2.假设法思想
+//    var max = ary[0];
+//    for(var i=1;i<ary.length;i++){
+//        var cur = ary[i];
+//        cur>max ?max = cur:null;
+//    }
+//    console.log(max)
+
+    // 3.Math.max  apply: 利用了apply方法传参数是一个个的传给apply的this；
+
+
+    //console.log(Math.max(ary));// NaN
+    console.log(Math.max.apply(null,ary));//89
+
+
+</script>
+</body>
+</html>

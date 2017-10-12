@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    var oDivs = document.getElementsByTagName("div");
+//    try catch finally
+
+    try{
+        console.log(num)
+//        var ary = Array.prototype.slice.call(oDivs);
+        console.log(1)
+    }catch(e){// error
+        console.log(e.message);
+        // 抛出异常信息；
+        throw  new Error(e.message);
+        // e.message : 存储错误信息；
+        // 参数不一定叫e,但是参数一定要有；
+        // 当try后面的语句中，报错了，会执行此处的代码；如果try语句中，没有报错的代码，那么这个代码不执行；
+        var ary = []
+        for(var i=0;i<oDivs.length;i++){
+            ary[ary.length] = oDivs[i];
+        }
+    }finally {
+        //不管try语句中是否报错，这里面代码总会执行
+        console.log(100)
+    }
+
+
+
+
+</script>
+</body>
+</html>

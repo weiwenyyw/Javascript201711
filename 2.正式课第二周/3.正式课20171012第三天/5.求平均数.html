@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 满分
+//    function avFn(){
+//        // arguments
+//        console.log(arguments.sort);// undefined
+//        console.log(arguments instanceof Array);
+//        // arguments 是一个类数组，数据类型是对象数据类型的，不是Array这个类的一个实例，所以不能array这个类原型的方法；
+//
+////        arguments.sort(function (a,b) {
+////            return a-b;
+////        })
+//        // 1.类数组：转换成数组循环
+////        var ary = [];
+////        for(var i=0;i<arguments.length;i++){
+////            //把arguments每一项的值放进ary中；
+//////            ary.push(arguments[i])
+////            ary[ary.length] = arguments[i]
+////        }
+//        // 2.调用数组Array原型上slice方法，改变slice中this指向；
+//        var ary = Array.prototype.slice.call(arguments,0);
+////        console.log(ary);
+//        ary.sort(function (a,b) {
+//            return a-b;
+//        });
+//        // 删除最大一项
+//        ary.pop();
+//        // 删除第一项
+//        ary.shift();
+//       return eval(ary.join("+"))/ary.length;
+//    }
+//    console.log(avFn(9.5, 9.4, 9.6, 9.6, 9.9, 9.0, 10, 8));
+
+    // slice : 截取
+//    var ary = [12,78,9];
+    // 会把数组类原型上的方法进行覆盖；
+//    Array.prototype.slice = function () {
+//        console.log(1)
+//    }
+//    console.log(ary.slice());undefined
+//    Array.prototype.slice = function () {
+//        var ary = [];
+//        for(var i=0;i<arguments.length;i++){
+//            ary[ary.length] = arguments[i];
+//        }
+//        return ary;
+//    }
+
+    // 第二种方法: 直接操作arguments
+    function avFn() {
+
+        [].sort.call(arguments,function (a,b) {
+            return a-b;
+        });
+        [].pop.call(arguments);
+        [].shift.call(arguments);
+        return eval([].join.call(arguments,"+"))/arguments.length;
+    }
+    avFn(9.5, 9.4, 9.6, 9.6, 9.9, 9.0, 10, 8)
+
+
+
+
+
+
+</script>
+</body>
+</html>

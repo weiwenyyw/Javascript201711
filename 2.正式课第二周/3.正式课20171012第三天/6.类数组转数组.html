@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    var oDivs = document.getElementsByTagName("div");
+//    console.log(typeof oDivs);// "object"
+    //getElementsByTagName : 获取到的结果是一个类数组；
+    // Array.prototype.slice:在IE678 下是不兼容的；
+    var ary = Array.prototype.slice.call(oDivs);
+//    console.log(ary instanceof  Array);
+    var ary = []
+    for(var i=0;i<oDivs.length;i++){
+        ary[ary.length] = oDivs[i];
+    }
+    console.log(ary);
+
+
+</script>
+</body>
+</html>
