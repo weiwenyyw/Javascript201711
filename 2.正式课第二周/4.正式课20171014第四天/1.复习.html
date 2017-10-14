@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<div></div>
+<div></div>
+<div></div>
+<script src="utils.js"></script>
+<script>
+    var  oDivs = document.getElementsByTagName("div");
+
+    // Function 是所有函数的类
+    // call  apply  bind 全部在Function这个类的原型上；
+
+//    function fn() {
+//
+//    }
+//    console.log(fn instanceof Function);
+//    fn.call(1);
+
+
+    // 类数组
+
+    function fn() {
+        // arguments :只是一个类数组；
+//        arguments.sort()
+//        var ary = [];
+//
+//        for(var i=0;i<arguments.length;i++){
+//            ary[ary.length] = arguments[i]
+//        }
+        var ary = Array.prototype.slice.call(arguments)
+        ary.pop();
+        ary.shift();
+        // 删除一项 ，数组的length已经减一
+//        console.log(ary);
+         return eval(ary.join("+"))/ary.length
+
+
+    }
+    fn(12,34,6,90)
+
+   // 调用数组的链式写法，注意当前方法的返回值；
+//    var  ary = [12,34,6,8,9];
+//    var a =ary.pop().slice(2).splice(2,1).push(6);
+//    console.log(a);
+
+    //
+    //try  catch
+
+    // 元素集合（类数组）转换成真正的数组；
+//    function toListArray(likeAry) {
+//        var ary =[];
+//        try{
+//            ary = Array.prototype.slice.call(likeAry)
+//        }catch(e){
+//            for(var i=0;i<likeAry.length;i++){
+//                ary[ary.length] = likeAry[i]
+//            }
+//        }
+//        return ary;
+//    }
+    console.log(utils.toListArray(oDivs));
+
+
+</script>
+
+</body>
+</html>

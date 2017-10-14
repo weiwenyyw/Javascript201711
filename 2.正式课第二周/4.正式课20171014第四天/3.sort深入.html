@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var ary = [12,3,4,6,88];
+//    ary.sort(function (a,b) {
+//        console.log(a, b);
+//        12 3
+//        12 4
+//         3 4
+//        12 6
+//         4 6
+//         12 88
+//        return a-b;
+//    })// 从小到大
+//    ary.sort(function (a,b) {return b-a;})// 从大到小
+    // sort ： 就是一个函数
+
+    // return a-b ;如果a-b大于0，那么a和b 互换位置，如果a-b小于0，则不交换位置；
+    // return b-a ;
+    // 回调函数返回值大于0，交换位置，小于0 ，不交换；
+
+    // 回调函数: 把方法B当做一个参数传给了方法A，在A 这个方法任意位置都可以调用B执行，那么方法B就是方法A的-->回调函数;
+
+//    function A(c) {
+//        console.log(1);
+//        c();
+//    }
+//    A(B);
+//    A(D);
+
+//    function B() {
+//        console.log(2)
+//    }
+//    function D() {
+//        console.log(3)
+//    }
+  //
+    var  ary = [{name:"陈雪兰",age:25},{name:"郭慧",age:24},{name:"王赛赛",age:41},{name:"黄天乐",age:30}];
+// localeCompare : 最新版本浏览器按照当前字符的Unicode编码值【排序，在老版本浏览器，按照字符的首字母进行排序；
+    ary.sort(function (a,b) {
+        // a,b 是数组每一个整体成员
+        console.log(a,b);
+//        return a.age-b.age;
+//        return  a.name.localeCompare(b.name);
+    });
+console.log(ary);
+
+
+</script>
+</body>
+</html>

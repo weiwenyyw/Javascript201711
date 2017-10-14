@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // JSON  : 是一种数据格式；不是一种新的数据类型,前端通过ajax 请求去后台请求数据，后台一般情况下，以json格式数据返回
+
+    var obj = {name:"zhufeng",age:8};
+    // json的对象:获取属性名对应的属性值和对象获取一样；
+//    var jsonObj = {"name":"zhufeng","age":8};
+//    console.log(jsonObj["name"]);
+//    console.log(JSON.stringify(jsonObj));
+
+    // json 格式的字符串
+    var jsonObjStr = '{"name":"zhufeng","age":8}';
+
+//    var NBA = [{"name":"勇士","success":67,"fail":15,"successRate":"81%"},{},{}];
+    // 单双引号不能同时使用；
+    // JSON 是window下的一个属性；是一个对象；
+    // JSON.stringify();  把JSON格式的对象转换成JSON格式的字符串；
+    //"JSON" in window   // true
+
+    // JSON.parse() : 把JSON格式的字符串转换成JSON格式的对象；
+
+    console.log(jsonObjStr);
+//    console.log(JSON.parse(jsonObjStr));
+    // eval
+//    console.log(eval("("+jsonObjStr+")"));
+
+   utils.toJSON(jsonObjStr)
+    //"JSON" 在IE67 以下是不兼容的；
+//    console.log("JSON" in window);
+
+
+</script>
+</body>
+</html>

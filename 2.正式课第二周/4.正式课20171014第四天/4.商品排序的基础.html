@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width:100px;
+            height:400px;
+            margin:30px auto;
+        }
+        #box div{
+            height:100px;
+            line-height: 100px;
+            text-align: center;
+            width:100px;
+            color:red;
+            font-size: 18px;
+            border-bottom: 1px dashed red;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div>66</div>
+    <div>77</div>
+    <div>33</div>
+    <div>99</div>
+</div>
+<script src="utils.js"></script>
+<script>
+//    console.log(2);
+    // 1. 获取box下面所有的div集合（类数组），然后把它转换成一个真正的数组；
+    // 2.对当前数组进行排序，调用数组的sort方法；
+
+    // 1.要操作谁，就要获取谁；
+    var oBox = document.getElementById("box");
+    var oDivs = oBox.getElementsByTagName("div");
+    console.log(oDivs);
+// 把类数组转换成真正的数组；
+    var ary  = utils.toListArray(oDivs);
+
+    // 2.对当前的数组进行排序
+    ary.sort(function (a,b) {
+//        console.log(a.innerHTML);
+        //innerHTML : 获取的结果是一个字符串；
+        return a.innerHTML - b.innerHTML;
+
+    })
+    // 3.循环最新数组的每一项，放进页面中
+//    [{33},{66},{77},{99}]
+    for(var i=0;i<ary.length;i++){
+        oBox.appendChild(ary[i]);
+    };
+    var div1 = document.createElement("div");
+    div1.innerHTML = 100;
+    oBox.appendChild(div1)
+    console.log(oDivs.length);// 5;
+    // DOM映射：在js中，html中的每一个元素标签都有一个与之对应元素对象；它俩被捆绑到一起；
+
+
+
+
+
+</script>
+</body>
+</html>

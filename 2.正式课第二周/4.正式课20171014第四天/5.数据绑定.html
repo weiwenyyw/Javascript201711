@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #list{
+            width:500px;
+            margin:30px auto;
+
+        }
+        #list li{
+            height:50px;
+            line-height: 50px;
+            width:100%;
+            border-bottom: 1px dashed blue;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li>以习近平为核心的党中央推进健康中国建设纪实</li>
+    <li>让互联网发展成果惠及13亿人民砥砺奋进的五年</li>
+</ul>
+<script>
+    // 获取ul
+    var oUl = document.getElementById("list");
+
+    var ary = ["以习近平为核心的党中央推进健康中国建设纪实","美驻古巴使馆声波攻击录音首公开：听上去像蟋蟀","房价不涨了 为何还是房地产老板的财富增长最多？","以习近平为核心的党中央推进健康中国建设纪实","以习近平为核心的党中央推进健康中国建设纪实","以习近平为核心的党中央推进健康中国建设纪实"];
+    //1.创建li,并且放进数组；
+    // 弊端： 每当循环一次，DOM都会回流一次，影响性能；
+//    for(var i=0;i<ary.length;i++){
+//        var oLi = document.createElement("li");
+//        oLi.innerHTML = ary[i];
+//        oUl.appendChild(oLi);
+//    }
+
+    // 2.文档碎片
+    // 优势 ： 只引发一次回流；
+//    var frg = document.createDocumentFragment();// 文档碎片；容器（有临时存储的作用）
+//        for(var i=0;i<ary.length;i++){
+//        var oLi = document.createElement("li");
+//        oLi.innerHTML = ary[i];
+//        frg.appendChild(oLi);
+//    }
+//    oUl.appendChild(frg);
+//    frg = null;// 清空当前文档碎片；
+    // 3.字符串拼接
+    // 优势 ： 引发一次回流
+    // 弊端： 当引入多个变量时，进行复杂字符串的拼接；
+    var ary1 = [2017/10/14]
+    var str = "";
+    for(var i=0;i<ary.length;i++){
+        str+="<li data-time='"+ary1[0]+"'>"+ary[i]+"</li>"
+    }
+//     appendChild : 参数一定是一个元素对象；
+    oUl.innerHTML +=str;
+    // 4.es6模板字符串
+    // 优势： 可以任意换行
+//    var str = ``;
+//    for(var i=0;i<ary.length;i++){
+//        str+=`<li>${ary[i]}
+//</li>`;
+//    }
+//    oUl.innerHTML +=str;
+
+
+    // DOM 的回流： 页面中DOM的结构，元素的位置，元素添加删除...都会让浏览器对当前页面的样式及结构进行重新的计算--->引发DOM的回流；
+
+    // DOM 的重绘 :页面元素的背景颜色等发生变化，浏览器会对当前页面中元素进行重新的渲染---> DOM 的重绘；
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

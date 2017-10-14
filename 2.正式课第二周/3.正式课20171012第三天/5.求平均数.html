@@ -46,7 +46,7 @@
 //    console.log(ary.slice());undefined
 //    Array.prototype.slice = function () {
 //        var ary = [];
-//        for(var i=0;i<arguments.length;i++){
+//        for(var i=0;i<this.length;i++){
 //            ary[ary.length] = arguments[i];
 //        }
 //        return ary;
@@ -64,7 +64,8 @@
     }
     avFn(9.5, 9.4, 9.6, 9.6, 9.9, 9.0, 10, 8)
 
-
+ ary = [12,3,4];
+    ary.slice()
 
 
 
