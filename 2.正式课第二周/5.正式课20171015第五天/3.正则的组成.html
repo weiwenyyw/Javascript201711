@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 正则的组成 ：1. 两个斜杠 2.斜杠中的内容
+    // 在正则中有特殊意义的字符称为元字符；
+
+//    var reg = /\d/;
+//    console.log(reg.test("zhufneg"));
+//    console.log(/\d/.test("12"));
+//    var reg = /^\d$/;
+//    console.log(reg.test("123zhufen"));// true;
+    //  \ : 转义字符;
+    //  ^ :  以什么什么开头
+    // $ : 以什么结尾
+
+//    var reg = /\d?/;
+//    console.log(reg.test("zhufen"));
+//    console.log(reg.exec("123zhufeng"));
+
+    // 量词 ： 修饰个数
+     // *  : 出现0 到多次
+    // + : 出现1到多次
+    // ? : 出现0次或者一次；
+    // {n}: 出现n次
+    // {n,m} :
+    // 写一个正则 200-299 的整数；
+//
+//    var reg =/^2{2,3}\d{2}/;
+//    console.log(reg.test("22298"));
+
+    //  x|y :匹配x或y;
+//    var reg = /1|2/;
+//    console.log(reg.test("13"));// true
+//    console.log(reg.test("33"));// false
+//    var reg = /18|20/;
+    // 18  20 182  1820 820 120
+//    console.log(reg.test("820"));
+    // [xyz] :  匹配所包含xyz的任意一个字符
+//    var reg = /[abc]/;
+//    console.log(reg.test("daxiao"));
+    // [^abc] : 匹配除了abc以外的任意一个字符
+    //^ 在正则中括号中意思是除了；
+//    var reg = /[^abc]/;
+//    console.log(reg.test("daxiao"));
+    // [a-z] : a到z 的小写的字符范围
+
+    // \b  : 匹配一个单词边界
+    // \d :匹配一个0-9之间的数字；
+    // \D : 匹配一个非数字字符
+    // \n : 匹配一个换行符
+    // \w  : 匹配  ： 包括下划线、数字、字母（大小写）[0-9a-zA-Z_]
+    // \W :[^0-9a-zA-Z_]
+//    var reg = /\D/;
+//    console.log(reg.test("1.5"));// true;
+//
+//    var reg = /1[3578]\d{9}/;
+//    console.log(reg.test("16111111111"));// fasle;
+//   var reg = /\d?/;
+//    console.log(reg.test("111"));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 正则 ： 处理字符串的一个规则；
+    // toUpperCase toLowerCase  charAt  charCodeAt  indexOf  lastIndexOf  substring  substr  slice split  replace;
+//    "zhudne".substring(1,2)
+
+    // : 单行注释；
+    var reg = /\d/; // 匹配一个包含0-9的数字,验证当前字符是否含有0-9的一个数字；
+//    console.log(reg instanceof RegExp);
+
+    //匹配 ： test 在RegExp 这个类的原型上；
+//    console.log(reg.test("珠峰123"));// true;
+//    console.log(reg.test("珠峰"));// false;
+//    console.log(reg.test("zhufeng123peixun"));// true;
+//    console.log(reg.test(12));// true
+
+    // exec : 捕获  返回一个数组
+    console.log(reg.exec("珠峰123培训456"))//["1", index: 2, input: "珠峰123"]
+    console.log(reg.exec("pei345xun"));//["3", index: 3, input: "pei345xun"];
+
+    // 返回值 ：
+    //捕获的内容属性名就是索引，第一项值就是捕获的内容
+    // index : 代表当前捕获内容在当前字符串中的索引；
+    //input : 代表要捕获的整个字符串；
+    // length : 捕获内容的个数；
+
+    // 如果正则捕获不到内容，返回值是一个null;
+
+
+
+
+</script>
+</body>
+</html>

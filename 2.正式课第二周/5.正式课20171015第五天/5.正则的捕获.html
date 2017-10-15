@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "zhufeng123789peixun456";
+//    var reg = /\d+/;
+//    // + :一次到多次；解决了次数的问题
+//    console.log(reg.exec(str));//["123789", index: 7, input: "zhufeng123789peixun456"]
+//    console.log(reg.exec(str)); //["123789", index: 7, input: "zhufeng123789peixun456"]
+//    var reg = /\d+/g;
+//    // + :一次到多次；解决了次数的问题
+//    console.log(reg.exec(str));//["123789", index: 7, input: "zhufeng123789peixun456"]
+//    console.log(reg.exec(str)); //["456", index: 19, input: "zhufeng123789peixun456"]
+//    console.log(reg.exec(str));//null
+    // 懒惰性：正则捕获存在懒惰性
+    // 解决正则捕获懒惰性 ，在正则的后面加上一个g;
+    // g ： 原理 ； 每当捕获一次，会记录一下，当前捕获的最后一个字符的索引，下一次在捕获时，会直接从下一个字符开始捕获；
+    // global : （g）全局的；
+    // ignoreCase : (i) 忽略大小写
+    //multiline : (m) 多行匹配；
+
+    // 贪婪性 ：?
+    // ? : 放在量词的后面，取消正则捕获的贪婪性；
+    var reg = /\d+?/g;
+    // + :一次到多次；解决了次数的问题
+    console.log(reg.exec(str));//["1", index: 7, input: "zhufeng123789peixun456"]
+    console.log(reg.exec(str));//["2", index: 8, input: "zhufeng123789peixun456"]
+
+
+
+</script>
+</body>
+</html>
