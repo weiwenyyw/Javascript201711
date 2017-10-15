@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 基本数据类型 ： number string Boolean null  undefined;
+    // 引用数据类型： 分为函数数据类型和对象数据类型；
+    // 对象数据类型： 数组 对象 正则 时间  Math...
+//
+//    var str = "zhufeng";
+//    var a = [12,3,6];
+    // typeof  : 检测数据类型，返回一个字符串，字符串内容是当前变量的具体类型；
+
+    // typeof null --> "object"  代表空对象指针
+    // typeof : 局限性： 不能具体细分对象数据中具体的数据类型；
+    // typeof undefined -->"undefined"
+//    console.log(typeof 1); // "number"
+//    console.log(typeof true);// "boolean"
+//    console.log(typeof str); // "string"
+//    console.log(typeof a); // "object"
+//    console.log(typeof {});//"object"
+//    var fn  = function () {
+//
+//    }
+//    console.log(typeof fn);// "function"
+//    function sum(num1,num2) {
+//        if(typeof num1==="undefined"){
+//            num1= 0;
+//        }
+//        if(typeof num2 === "undefined"){
+//            num2 =0;
+//        }
+//        return num1+num2;
+//    };
+//    sum()
+//    function A(num) {
+//        if(typeof num==="function"){
+//            num();
+//        }
+//    }
+//    function B() {
+//        console.log(1);
+//    }
+//    A(B)
+//    A(10)
+
+    // 如果不传，则输出0；
+    // 如果传一个那么就返回这个数；
+    // 如果传两个数，那就是两个数的和；
+
+    // 2.instanceof   : 检测一个实例是都属于类的；
+    // Number String  Boolean Null Undefined  Function  Object Array RegExp Date...
+    // Null Undefined 浏览器禁止调用这个内置类；
+
+    //instanceof  : 不能检测基本数据类型通过字面量创建的变量；
+    // 只要当前类在当前实例的原型链上，都返回true；
+//    var ary = [12,3,4,"33d"];
+//    console.log(ary instanceof Object); // true;
+//    var reg = /\d/;
+//    console.log(reg instanceof RegExp);// true;
+//
+//    var num =1;// 字面量方式创建不是一个标准的实例；
+//    console.log(num instanceof Number);
+//    console.log("ss" instanceof String)
+
+
+    // constructor : 检测当前实例原型链上constructor的属性值；
+//    var ary =[12,3,4];
+//    Array.prototype = {
+//
+//    }
+//    var a = 1;
+//    console.log(ary.constructor===Object);
+    // 局限性 : 如果内置类的原型发生改变，也不能检测出当前实例的类型；
+
+
+    // Object.prototype.toString.call()
+    // 获取Object这个类原型上的toString方法，再调用call方法，call方法执行，改变了toString这个方法中的this关键字，并且让toString执行，返回一个字符串；
+
+//    console.log(Object.prototype.toString.call("100"));// "[object String]"
+//    console.log(Object.prototype.toString.call(100));// "[object Number]"
+//    console.log(Object.prototype.toString.call(false));//"[object Boolean]"
+//    console.log(Object.prototype.toString.call(function(){}));//"[object Function]"
+//    console.log(Object.prototype.toString.call({}));//"[object Object]"
+//    console.log(Object.prototype.toString.call([233,4,0]));//"[object Array]"
+//    console.log(Object.prototype.toString.call(undefined));//"[object Undefined]"
+//    console.log(Object.prototype.toString.call(null));//"[object Null]"
+
+
+    // 返回一个字符串  "[object 类]"
+
+    //
+    console.log(toString.call(1));
+
+
+</script>
+</body>
+</html>
