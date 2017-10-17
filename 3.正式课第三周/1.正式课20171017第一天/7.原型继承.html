@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 原型继承
+    function A(){
+        this.x = 100;
+    };
+    A.prototype.getX = function () {
+        console.log(this.x)
+    };
+//    A.prototype.getY = function () {
+//        console.log(this.y)
+//    }
+    var f = new A;
+//    f.getX()// 100
+//    A.prototype.getX();
+    function B() {
+//        this.x = 200;
+        this.y = 300;
+//        this.z =400;
+    }
+//    B.prototype.getZ= function () {
+//        console.log(this.z);
+//    }
+    // 把类A的原型赋值给类B的原型，B的实例也可以调用类A原型上的方法，当类A原型发生改变，那么类B也跟着改变；
+    // 原型继承，不仅继承了公有属性，还继承了类A的私有属性；
+    // 原型继承让类B的原型没有直接指向Object，而是在和Object之间多了一条链
+    B.prototype = new A;
+    console.log(B.prototype)
+    var b = new B;
+    // 实例b也想拥有getX
+    b.getX()//200
+//    b.getY();// 先找自己是否存在getY, 然后通过__proto__ 望上级继续查找，上级也没有，那么会通过__proto__往上查找，查到Object为止，--> 原型链查找；
+//    b.getZ();// 报错；
+
+
+
+
+
+</script>
+</body>
+</html>

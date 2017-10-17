@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //正则 ： 处理字符串的规则；
+    var reg = /\d+/g;
+    // test : 匹配字符串
+    var  str = "zhufen21珠峰34";
+    // exec : 捕获
+    // reg.lastIndex : 代表正则开始捕获的索引；
+    // g 原理: 没捕获一次，会对对当前正则lastIndex的属性值进行记录，下次捕获，从最新的位置开始捕获，所以捕获内容不一样；
+//    console.log(reg.lastIndex)   // 0
+//    console.log(reg.exec(str));  // 数组["21", index: 6, input: "zhufen21珠峰34"]
+//    console.log(reg.lastIndex)   // 8
+//    console.log(reg.exec(str));  // 数组["34", index: 6, input: "zhufen21珠峰34"]
+//    console.log(reg.exec(str));  //null
+
+    // 贪婪性 ： ？
+    // ? : 出现零次或一次；
+    // + : 一次或多次
+    // * : 零次或多次
+    //{n} : 出现n次
+    // {n,} : n 到多次
+    // {n,m} : n 到m 次
+
+    // \d : [0-9];
+    // \D : 除了0-9以外的字符
+    // \b : 单词边界字符
+    // \w : [0-9a-zA-Z_];
+    // \W
+
+    // \ : 转义字符
+    var  name = "zhufeng";
+    var reg = /^\d"+name+"$/;
+    console.log(reg.test("1zhufeng"));// false
+    console.log(reg.test('1""nameee"'));
+    var reg = new RegExp("\\d"+name+"");
+
+
+
+
+</script>
+</body>
+</html>

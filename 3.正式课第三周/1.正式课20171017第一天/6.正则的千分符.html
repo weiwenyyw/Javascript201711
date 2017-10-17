@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+//    var num1 = "8,812,889,898,966";
+//    function thousand(num) {
+//        if(num.length<=3){
+//           return num;
+//        }
+//    }
+//    console.log(thousand("8812889898966"));
+var num = "128989663338";
+var reg = /^(\d{1,3})((\d{3})+)$/;
+var str ="";
+num.replace(reg,function () {
+//    console.log(arguments);
+    var part1 = arguments[1];
+    var part2 = arguments[2];
+    str = part1+","+part2.replace(/\d{3}(?!\b)/g,function () {
+//            console.log(arguments);
+         return arguments[0]+",";
+    })
+})
+console.log(str);
+
+
+</script>
+</body>
+</html>

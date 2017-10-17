@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // replace :
+    var  str = "zhufeng2017zhufeng2018zhufeng2019";
+//    var str1 =str.replace("zhufeng","zhufengpeixun").replace("zhufeng","zhufengpeixun");//"zhufengpeixunpeixun2017zhufeng2018"
+
+//    console.log(str1);
+    // replace : 第一个参数可以是正则；
+    // i : 放在正则的后面忽略大小写；
+//    console.log(str.replace(/zhufeng/ig, "zhufengpeixun"));
+
+    // replace : 第一个参数是正则，第二个参数是一个回调函数；
+   var str1 = str.replace(/zhufeng/g,function () {
+        console.log(arguments[0]);
+        // 回调函数中的arguments和正则捕获的内容类似;
+        // 第一个参数如果是正则，那么replace执行时，会先用这个正则对当前这个字符串进行捕获，捕获几次，那么回调函数执行几次；
+       // 回调函数return出的内容就是要替换的内容；
+//       var name = ""
+        return "zhufengpeixun";
+
+    })
+    console.log(str1);
+
+
+</script>
+</body>
+</html>

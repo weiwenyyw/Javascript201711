@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 正则的分组 ： () 可以把一个大正则分解成几个小正则；
+    // 有效数字的正则 ：整数 负数 小数 正数  0;
+    // 括号 ： 可以改变正则的优先级；
+//    var  reg = /^-?(\d|([1-9]\d+))(\.\d+)?$/;
+//    var str = "9"
+//    console.log(reg.test("9.55"));
+
+    // 分组
+    // ^ : 以什么开头，以什么结尾；
+//    var  reg  = /^\w$/; // 检测字符串是否含有
+//    console.log(reg.test("dd"));// false
+//    var  reg  = /^(\w)\1$/;
+
+    // \1 : 代表出现和第一个分组一模一样的内容
+    // 只能应用于当前这个分组的后面；
+//    console.log(reg.test("dd"));
+
+//    var  reg  = /^(\w)(\d)\2\1$/;
+//
+//    console.log(reg.test("d11d"));
+
+    // 分组的捕获:
+    //不仅要对大正则进行捕获，而且要对每个括号的小正则进行捕获；从左到右依次对括号中的内容进行捕获；
+    var  reg = /^-?(\d|([1-9]\d+))(\.\d+)?$/;
+    // ["9.88", "9", undefined, ".88", index: 0, input: "9.88"]
+    //
+    console.log(reg.exec("9.88"))
+
+
+</script>
+</body>
+</html>

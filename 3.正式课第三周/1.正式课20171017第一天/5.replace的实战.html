@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var date = "20171017";
+//    var data = ["零","壹","贰","叁","肆","伍","陆","柒","捌","玖","拾"];
+//    var a =date.replace(/\d/g,function () {
+////        console.log(arguments[0]);
+//        //每一次捕获数组的第一项，都是当前最新的捕获的数字，那么这个数字是对应data里面的大写数字的索引；然后每捕获一次，去这个数组去获取一次
+//        return data[arguments[0]];
+//    });
+//    console.log(a);
+
+    // 思考题 ：
+
+    var str = "2017-10-17 12:56:30"
+    // 把这个字符创变成2017年10月17日  12时56分30秒;
+    var  data = ["年","月","日","时","分","秒"];
+    var  newStr = "";
+    var i =0;
+    var  str1 =str.replace(/\d+/g,function () {
+        console.log(arguments[0])
+        newStr += arguments[0] + data[i++];
+    })
+    console.log(str1);
+    console.log(newStr);
+
+
+</script>
+</body>
+</html>

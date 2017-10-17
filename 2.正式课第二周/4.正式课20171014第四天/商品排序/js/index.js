@@ -14,7 +14,7 @@ xhr.onreadystatechange = function () {
 // 4.发送请求
 xhr.send(null);
 // 2.数据绑定
-// console.log(data[0])
+// console.log(data)
 var oUl = document.getElementById("list");
 var str = "";
 for(var i=0;i<data.length;i++){
@@ -61,11 +61,13 @@ function sortList() {
         //getAttribute : 获取元素对象的属性名对应的属性值
         // 如果属性名不存在，那么获取的结果就是null;
         var  cur = a.getAttribute(dataAry[that.index]);
-        var nex = b.getAttribute(dataAry[that.index]);
+
+        var  nex = b.getAttribute(dataAry[that.index]);
         // 把时间数字之间的横杠去掉；
         //Cannot read property 'replace' of null : 不能读取null的replace属性；
 
         //debugger : 让js代码停到这一行；F10是执行下一行  F8 :跳到下一个断点；
+        console.log(cur);
         cur = cur.replace(/-/g,"");
         nex = nex.replace(/-/g,"");
 
@@ -86,9 +88,9 @@ function sortList() {
 // 3.数据绑定
 // 4.给a标签绑定点击事件
 // 5.排序 获取所有的li,类数组转数组；进行排序；
-
-
-
+// var obj = {name:"zhufeng"}
+//
+// var str = obj.name+""
 
 
 
