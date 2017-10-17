@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // call  : 改变this关键字
+    function A() {
+        this.x = 100;
+        this.y =300;
+        this.w = 1000;
+    }
+    A.prototype.getX = function () {
+        console.log(this.x);
+    }
+    var a = new A;
+
+    function B() {
+        this.y = 200;
+        // 方法B作为一个类，那么this指向当前B的实例；
+        // 让A方法中的this指向B的实例；
+        //call  : 类B的实例只继承A的私有属性；
+        A.call(this);
+    }
+//    B();
+    var f = new B;
+    console.log(f.getX);//undefined
+    console.log(f.y);// 300
+
+</script>
+</body>
+</html>

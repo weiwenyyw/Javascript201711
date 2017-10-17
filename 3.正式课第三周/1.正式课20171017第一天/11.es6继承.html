@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    function A() {
+//
+//    }
+    // class : 定义一个类；
+    class A{
+        constructor(name){
+            /// 私有属性
+            this.x=100;
+        }
+        getX(){
+            console.log(this.x);
+        }
+    };
+    // extends : 扩展，继承
+    class B extends A{
+        constructor(){
+            // 类B本身没有this的关键字；
+            super();
+            this.x = 200;
+        }
+    }
+    var f = new A("珠峰");
+//    console.log(f);
+    var b = new B;
+    b.getX()
+
+
+
+</script>
+</body>
+</html>

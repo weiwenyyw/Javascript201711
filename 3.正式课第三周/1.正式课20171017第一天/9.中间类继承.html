@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function avgFn() {
+        // arguments是一个类数组，__proto__ 指向Object这个类的原型；
+        arguments.__proto__ = Array.prototype;
+        // 数组原型上的方法arguments都可以调用；arguments首先会通过__proto__
+        arguments.sort(function (a,b) {
+            return a-b;
+        });
+
+    }
+    avgFn(99,98,100,96,90,93);
+
+
+
+</script>
+</body>
+</html>

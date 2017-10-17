@@ -19,16 +19,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="1.复习.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/1.复习.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="2.正则的分组.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/2.正则的分组.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -79,34 +69,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="7.原型继承.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="7.原型继承.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/7.原型继承.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="457">
-              <caret line="35" column="18" lean-forward="true" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+              <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2.正式课第二周/4.正式课20171014第四天/商品排序/index.html">
+      <file leaf-file-name="8.call继承.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/8.call继承.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="633">
+              <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2.正式课第二周/4.正式课20171014第四天/商品排序/js/index.js">
+      <file leaf-file-name="9.中间类继承.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/9.中间类继承.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="83" column="0" lean-forward="true" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="396">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="10.寄生组合式继承.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/10.寄生组合式继承.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="545">
+              <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="11.es6继承.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/11.es6继承.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,10 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/1.正式课第一周/20170928正式课第三天/6.单例模式.html" />
-        <option value="$PROJECT_DIR$/1.正式课第一周/20170928正式课第三天/7.工厂模式.html" />
-        <option value="$PROJECT_DIR$/1.正式课第一周/20170929正式课第四天/2.复习.html" />
-        <option value="$PROJECT_DIR$/1.正式课第一周/20170929正式课第四天/1.练习.html" />
         <option value="$PROJECT_DIR$/1.正式课第一周/20170929正式课第四天/3.面向对象.html" />
         <option value="$PROJECT_DIR$/1.正式课第一周/20170929正式课第四天/4.构造函数.html" />
         <option value="$PROJECT_DIR$/1.正式课第一周/20170929正式课第四天/5.构造函数扩展.html" />
@@ -179,6 +183,10 @@
         <option value="$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/5.replace的实战.html" />
         <option value="$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/6.正则的千分符.html" />
         <option value="$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/7.原型继承.html" />
+        <option value="$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/8.call继承.html" />
+        <option value="$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/9.中间类继承.html" />
+        <option value="$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/10.寄生组合式继承.html" />
+        <option value="$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/11.es6继承.html" />
       </list>
     </option>
   </component>
@@ -391,18 +399,18 @@
       <workItem from="1507944591375" duration="25070000" />
       <workItem from="1508031382365" duration="21027000" />
       <workItem from="1508115099114" duration="1195000" />
-      <workItem from="1508201386217" duration="18945000" />
+      <workItem from="1508201386217" duration="24097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226724000" />
+    <option name="totallyTimeSpent" value="231876000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1918" height="1028" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21888413" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2387339" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292978" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -439,34 +447,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/1.正式课第一周/20170928正式课第三天/3.练习.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.正式课第一周/20170928正式课第三天/4.this 问题.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.正式课第一周/20170928正式课第三天/5.this综合面试题.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.正式课第一周/20170928正式课第三天/6.单例模式.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3784">
-          <caret line="86" column="9" lean-forward="false" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1.正式课第一周/20170928正式课第三天/7.工厂模式.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1144">
@@ -814,7 +794,39 @@
     <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/7.原型继承.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
-          <caret line="35" column="18" lean-forward="true" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/8.call继承.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/9.中间类继承.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/10.寄生组合式继承.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="32" column="19" lean-forward="true" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3.正式课第三周/1.正式课20171017第一天/11.es6继承.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
           <folding />
         </state>
       </provider>
