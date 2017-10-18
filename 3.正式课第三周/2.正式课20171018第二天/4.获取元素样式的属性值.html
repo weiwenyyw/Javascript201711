@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            margin:50px auto;
+            width:100px;
+            height:100px;
+            background: red;
+            /*只有标准浏览器认识这个属性*/
+            opacity: 0.8;
+            /*IE8版本设置透明度*/
+            filter:alpha(opacity=30);
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+</div>
+<script>
+//  1.元素.style.width
+// 只能获取元素行内设置的样式的值
+var oBox= document.getElementById("box")
+//console.log(oBox.style.width);// "150px"
+
+    // 2.getComputedStyle : 获取浏览器计算的盒子的样式值；
+    // getComputedStyle(元素).样式
+    //console.log(getComputedStyle);
+     /// 返回值是一个字符串
+//    console.log(getComputedStyle(oBox).width);// 100px
+
+    // getComputedStyle 不兼容IE8及以下
+// 3.currentStyle : 是元素对象下的某个属性名，属性值是一个对象，对象包含了当前oBox的样式信息
+//console.log(oBox.currentStyle.width);
+    // 获取元素的样式值的方法
+    function getCss(curEle,attr) {
+        // 验证参数
+        if(typeof curEle ==="undefined" || typeof attr === "undefined"){
+            throw new Error("您的参数不符合要求")
+        }
+    // 两个参数 ： curEle元素（获取哪个元素的样式）  attr : 属性
+//        "getComputedStyle" in window
+        // 验证标准标准浏览器
+        var val="";
+        if("getComputedStyle" in window){
+            val = getComputedStyle(curEle)[attr];
+        }else{
+            // IE8及以下版本；
+//            console.log(curEle.currentStyle)
+            if(attr==="opacity"){
+                val = curEle.currentStyle["filter"];
+                //'alpha(opacity=30)'
+                var reg = /^alpha\(opacity=(\d+(?:\.\d+)?)\)$/;
+                return reg.test(val) ? reg.exec(val)[1]/100 : null;
+            }else{
+                val = curEle.currentStyle[attr];
+            }
+            // ?: 放在小括号的前面，是不进行捕获的
+        }
+        // 去掉单位，便于运算
+        // px  em  rem
+        var newReg = /^-?\d+(\.\d+)?(px|em|rem)$/;
+        return  newReg.test(val) ? parseFloat(val) :val;
+    }
+    console.log(getCss(oBox, "opacity"));
+
+
+</script>
+</body>
+</html>

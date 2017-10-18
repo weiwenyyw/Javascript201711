@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            /*margin:50px auto;*/
+            /*width:100px;*/
+            /*height:100px;*/
+            background: red;
+            /*!*只有标准浏览器认识这个属性*!*/
+            /*opacity: 0.3;*/
+            /*!*IE8版本设置透明度*!*/
+            /*filter:alpha(opacity=30);*/
+        }
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    // js可以改变当前盒子的样式，不仅仅可以获取盒子的样式，还可以改变盒子的样式；
+    var oBox = document.getElementById("box");
+//    oBox.style.width = "200px";
+//    oBox.style.opacity =0.8;
+    function setCss(curEle,attr,val) {
+//        curEle.style[attr] = val;
+        if(attr==="float"){
+            curEle.style[attr] = val;
+            curEle.style["styleFloat"] = val;
+            return;
+        }
+        // 处理IE8以下设置透明度的值；
+        if(attr==="opacity"){
+            curEle.style[attr] = val;
+            curEle.style["filter"] = "alpha(opacity="+val*100+")";
+            return;
+        }
+        //给元素属性值加单位；
+        var reg = /^(width|height((margin|padding)?(top|left|right|bottom)?)?)$/;
+        if(reg.test(attr)){
+            if(!isNaN(val)){
+                val = val+"px";
+            }
+        }
+        curEle.style[attr] = val;
+    }
+//
+//    setCss(oBox,"float","left");
+//    setCss(oBox,"width",200)
+//    oBox.style["float"]="left";
+//    console.log(oBox.style)
+    // 设置元素的一组样式；
+    function setGroupCss(curEle,options) {
+        // options : 参数必须是一个对象；
+        if(typeof options ==="object"){
+            for(var key in options){
+                setCss(curEle,key,options[key])
+            }
+        }
+    }
+    setGroupCss(oBox,{width:200,height:300,opacity:0.6})
+
+
+</script>
+</body>
+</html>
