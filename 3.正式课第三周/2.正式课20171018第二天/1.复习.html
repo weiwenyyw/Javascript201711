@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 正则： 表单验证
+    // 正则的分组  （） :改变优先级
+//    var reg  = /^[+-]?(\d|([1-9]\d+))(\.\d+)?$/;
+    // 正则捕获 ： 不仅要捕获大正则的内容，还要对小正则进行捕获；
+
+    // [] : [xyz] xyz任意一个；[568] : 不识别多位数
+//    var reg =/^(1[8-9])|([2-5]\d)|(6[0-5])$/;
+    var  str = "zhufeng12zhufeng34"
+    // replace : 字符串 的方法
+    // 参数2： 两个全部是字符串， 后面的字符串替换前面的字符串
+    // replace :
+   // 参数2： 第一个是正则，第二个是字符串
+//    str.replace(/zhufeng/g,"zhufengpeixun");
+//    // 参数3 ： 第一个是正则，第二个是回调函数
+//    str.replace(/zhufeng/g,function () {
+//        // arguments : 跟正则捕获的内容是类似；
+//        // return 后面替换掉正则捕获的内容；
+//        return 1
+//    })
+
+
+    // 原型继承 ：把类A的实例给了类B的原型，那么类 B创建的实例。可以继承A原型上的方法，还可以继承类A私有的属性
+//    Date.prototype.toNew = function () {
+//        // this
+//        return
+//    };
+//    "1223344444".toNew();
+//    function A() {
+//        this.x = 100;
+//    }
+//    A.prototype.getX = function () {
+//
+//    }
+//    function B() {
+//
+//    }
+//    B.prototype = new A;
+//    var b = new B;
+//    b.getX();
+
+    // call 继承
+//    function A() {
+//        this.x = 100;
+//    };
+//    function B() {
+//        A.call(this)
+//    }
+//    var b = new B;
+
+
+    // 中间类 继承  __proto__
+
+//    function avgFn() {
+//        // 在IE10及以下，不允许调用__proto__这个属性；
+//        arguments.__proto__ = Array.prototype;
+//        arguments.sort(function (a,b) {
+//            return a-b;
+//        })
+//    }
+//    avgFn(99,88,98,89,78)
+
+
+// 寄生式组合式继承
+//    var obj1 = {};
+//    var obj =Object.create(obj1);
+//        function A() {
+//            this.x = 100;
+//        };
+//        A.prototype.getX = function () {
+//
+//        }
+//        function B() {
+//            A.call(this)
+//        }
+//        B.prototype = Object.create(A.prototype);
+//        var b = new B;
+
+        // es6 继承：不仅继承公有属性，还继承私有属性；
+    // 创建一个类；
+    class A{
+        constructor(){
+            this.x = 100;
+        }
+        getX(){
+            console.log(this.x)
+        }
+    }
+    class B extends A{
+        constructor(){
+            super();
+//            this.x = 200
+        }
+    }
+    var f = new B;
+    f.getX();
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

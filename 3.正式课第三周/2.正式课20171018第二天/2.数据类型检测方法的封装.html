@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Object.prototype.toString.call()   "[object Number]"
+//    console.log(Object.prototype.toString.call("122"));
+    //checkType  : 对象  isNumber  isString  isBoolean  isNull...
+
+    ~function () {
+        // 初始化object，object的属性值代表常获取到的数据类型；
+        var obj = {
+            isNumber : "Number",
+            isString : "String",
+            isBoolean : "Boolean",
+            isNull : "Null",
+            isUndefined : "Undefined",
+            isPlanObject : "Object",
+            isArray : "Array",
+            isRegExp : "RegExp",
+            isDate : "Date"
+        };
+        var checkType = {};
+        for(var key in obj){
+//            console.log(key)
+            // 过滤掉公有属性，只留下私有属性；
+            // hasOwnProperty : 检测是否私有属性，如果是返回true，不是返回false
+            // 不是私有属性，直接结束本轮循环；
+            if(obj.hasOwnProperty(key)===false){
+                continue;
+            }
+            checkType[key] = (function () {
+                var name = obj[key];
+                return function (val) {
+                    var  reg = new RegExp("\\[object "+name+"\\]");
+//                    var  reg =/\[object Number\]/;
+//                    "[object String]"
+                    return reg.test(Object.prototype.toString.call(val))
+                }
+            })()
+        }
+//        console.log(checkType)
+        // 把checkType这个对象给window下的checkType;
+        window.checkType = checkType;
+
+    }();
+    console.log(checkType.isNumber({})); // 如果是数字，返回true，如果不是数字，返回false
+    console.log(checkType.isArray([]));
+    //
+    var obj = {name:"aa",age:12};
+    // in : 不仅检测公有而且私有都返回true；
+    console.log("toString" in obj);
+    //    for(var key in obj){
+//        console.log(obj[key])
+//    }
+
+//    var a = "123";
+//    console.log(a + "456");
+
+
+</script>
+</body>
+</html>

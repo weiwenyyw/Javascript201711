@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 30px auto;
+            width: 150px;
+            padding: 20px;
+            height: 200px;
+            border:10px solid blue;
+            border-left: 5px solid blue;
+
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    夫君子之行，静以修身，俭以养德。非澹泊无以明志，非宁静无以致远。夫学须静也，才须学也，非学无以广才，非志无以成学。淫慢则不能励精，险躁则不能冶性。年与时驰，意与日去，遂成枯落，多不接世，悲守穷庐，将复何及！
+</div>
+<script>
+    // js中的盒子模型
+    var oBox = document.getElementById("box");
+    // oBox 是一个对象；
+    // 1.clientWidth  clientHeight
+    // clientWidth = 内容的宽度+ 左右padding
+    // clientHeight = 内容的高度加上 + 上下padding;
+    console.log(oBox.clientWidth);
+    // 浏览器可视窗口的宽度和高度
+//    var winW =document.documentElement.clientWidth ||document.body.clientWidth;
+//    var winH =document.documentElement.clientHeight || document.body.clientHeight;
+
+    //2. clientTop clientLeft : 边框的宽度
+    // 不存在clientRight 和clientBottom;
+//    console.log(oBox.clientRight);
+
+    // 3.offsetWidth offsetHeight ： 和margin无关
+    // offsetHeight : 盒子的内容的高度+ 上下padding + 上下border
+    // offsetWidth : 盒子的内容的宽度+ 左右padding + 左右border
+
+    // 4.scrollWidth scrollHeight
+
+    // 如果内容不溢出，scrollWidth = clientWidth = 内容宽度 + 左右两个padding；
+   // scrollHeight = clientHeight = 内容高度 + 上下两个padding；
+    // 如果内容有溢出 scrollWidth = padding-left + 内容实际的宽度
+    // scrollHeight  = padding-top + 内容实际的高度
+//  在有内容溢出时，获取到的结果是个约等于值，可能每个不同的浏览器获取的结果是不同的
+
+//    console.log(navigator.userAgent);
+
+
+</script>
+</body>
+
+</html>
