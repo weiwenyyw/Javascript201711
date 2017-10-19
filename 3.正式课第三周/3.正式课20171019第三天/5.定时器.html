@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // setTimeout setInterval : 是window这个对象下属性，属性值是一个函数
+    // setTimeout(fn,time)  过了time毫秒之后，执行这个定时器
+    // setInterval(fn,time) 每隔一段时间执行一次；
+//    setTimeout(12,1000);
+//    function fn() {
+//        if(typeof arguments[0]==="function"){
+//            arguments[0]();
+//        }
+//    }
+//    function fn() {
+//        console.log("1秒")
+//    }
+    // 当代码加载到这一行时，浏览器会默认记录一个值，过了1000毫秒之后，再执行这里的代码 --->异步编程
+//    var timer=setTimeout(fn, 1000);// 1
+//    setTimeout(fn, 1500);// 2
+//    console.log(setInterval(fn, 2000))// 3
+    // 定时器的返回值代表当前定时器在这个页面中第几个定时器；
+    //    console.log(2)
+//    setInterval(fn,1000)
+    // 清除定时器
+//    clearTimeout(timer);
+//    clearInterval()
+    // JS 是单线程的；
+    setTimeout(function () {
+        console.log(3)
+    },15)
+    setTimeout(function () {
+        console.log(1)
+    },10)
+    for(var i=0;i<1000000;i++){
+
+    }
+    console.log(2)
+
+
+
+</script>
+</body>
+</html>
