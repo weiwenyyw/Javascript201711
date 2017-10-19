@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        #outer{
+            position: relative;
+            width:300px;
+            height:300px;
+            margin:20px auto;
+            background: red;
+            border:10px solid black;
+        }
+        #inner{
+            width:200px;
+            height:200px;
+            margin:20px auto;
+            background: blue;
+        }
+        #center{
+            width:100px;
+            height:100px;
+            margin:20px auto;
+            background: yellow;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <div id="center">
+
+        </div>
+    </div>
+</div>
+<script>
+    var outer = document.getElementById("outer");
+    var inner = document.getElementById("inner");
+    var center = document.getElementById("center");
+    //parentNode : 父级节点
+    // body 的父级节点是html
+//    console.log(document.documentElement.parentNode);
+    // 父级参照物 offsetParent
+    // 在页面中，元素没有特殊处理情况下，它的父级参照物都是body,如果当前元素加上position这个属性，那么这个元素就变成了子元素的父级参照物；body 的父级参照物是null;
+    // 父级参照物可以通过css属性设置进行修改；
+    // 获取 outer的父级参照物
+//    console.log(outer.offsetParent); // "body";
+//    console.log(inner.offsetParent); // "body";
+//    console.log(center.offsetParent); // "body";
+//    console.log(document.body.offsetParent);
+    //
+    // 偏移量： 当前元素距离父级参照物内边框的距离；
+    // offsetTop offsetLeft : 距离父级参照物的内边框的距离
+//    console.log(inner.offsetLeft); // 50
+//    console.log(center.offsetLeft);
+
+
+    // IE8(不是模拟仿真) ：计算偏移量会把父级参照物的边框的算进去
+
+    // 获取当前元素距离body的距离,
+    // 1.获取当前元素的左偏移量，加上父级参照物的边框，然后再加上父级参照物的左偏移量；一直向上获取，直到找到body为止；
+
+    function offset(curEle) {
+        // 获取当前元素的左偏移量,上偏移量
+        var l = curEle.offsetLeft;
+        var t = curEle.offsetTop;
+        var p = curEle.offsetParent;
+        // 只有父级参照物存在，那么才会加上父级参照物的边框的宽度和高度；
+        while(p){
+            // 如果是IE8 那么不需要加上父级参照物的边框的宽度；
+            if(!/MSIE 8\.0/.test(navigator.userAgent)){
+                // 如果不是IE8,需要加上这里边框的宽度高度；
+                l+=p.clientLeft;
+                t+=p.clientTop;
+            }
+            // 加上父级参照物的偏移量；
+            l+=p.offsetLeft;
+            t+=p.offsetTop;
+            // 获取当前元素父级参照物的父级参照物
+            p = p.offsetParent;
+        };
+        return {left:l,top:t};
+    };
+    console.log(offset(inner).left);
+    //
+    console.log(navigator.userAgent);// 浏览器版本信息
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 公共封装的目的：
+    ~function () {
+        var obj ={};
+        var checkType = {};
+        for(var key in obj){
+            // for in  循环 key 是obj 的属性名
+
+            checkType[key] = (function () {
+
+                return function () {
+
+                }
+            })()
+        }
+        window.checkType = checkType;
+    }();
+
+    // true false
+    checkType.isNumber("12")
+
+
+    // js中盒子模型
+
+    // clientWidth  clientHeight
+    // clientTop  clientLeft
+    // offsetWidth offsetHeight
+    // scrollWidth  scrollHeight
+
+
+    // getCss:获取元素的属性的属性值
+    // 1.通过typeof 判断参数
+    // 2.标准浏览器下computedStyle 判断是否不兼容computedStyle
+    // 3.不兼容computedStyle，就用currentStyle
+        // 3.1  对透明度的处理   opacity--->filter   --> 正则捕获这个数字
+    // 4.去单位 ，方便后期的计算；
+    function getCss(curEle,attr) {
+        //
+        if(typeof curEle === "undefined" || typeof attr ==="undefined"){
+            throw  new ReferenceError("您的参数格式不正确")
+        };
+        // 检测window是否有getComputedStyle 这个属性
+        var val;
+        if("getComputedStyle" in  window){
+            val=getComputedStyle(curEle)[attr];
+        }else{
+            // 在IE8及以下执行此处的代码
+            if(attr.toLowerCase()==="opacity"){
+
+            }else{
+                val =curEle.currentStyle[attr];
+            }
+
+        }
+        // 4.去单位
+        var reg = /-?\d+(\.\d+)?(px|em|rem)/i;
+        return reg.test(val)?parseFloat(val):val;
+
+
+    }
+    // computedStyle  currentStyle
+
+    // setCss
+    function setCss(curEle,attr,val) {
+        // 1.float  opacity
+
+        curEle.style[attr] = val;
+    }
+    function setGroupCss(curEle,options) {
+        if(Object.prototype.toString.call(options)!=='[object Object]'){
+            return;
+        };
+        for(var key in options){
+            setCss(curEle,key,options[key]);
+        }
+    }
+    // css : 思考题
+    // 把getCss setCss  setGroupCss 封装成一个css 方法；
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
