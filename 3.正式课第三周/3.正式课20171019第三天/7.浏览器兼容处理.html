@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //
+    //getComputedStyle()// 值存在于标准浏览器下的window这个对象
+
+    // 1.try catch 异常捕获
+//    var val;
+//    try{
+//        val = window.getComputedStyle(oBox)[attr]
+//    }catch(e){
+//        val = oBox.currentStyle[attr];
+//    }
+//    console.log(1)
+
+    // 2. in  :判断某个属性是否在某个对象中； 不仅可以检测私有属性，还可以检测共有属性，只要这个属性在当前对象的原型链上，都返回true；
+//    console.log(getComputedStyle); // function
+//    if("getComputedStyle" in window){
+//        val = getComputedStyle(oBox)[attr];
+//    }
+//    var  obj = {age:2017};
+//    console.log("toString" in obj);
+
+    // 3.navigator.userAgent : 浏览器的版本信息
+    console.log(navigator.userAgent);
+
+//     MSIE
+    var reg = /MSIE [6-8]\.0/;
+    reg.test(navigator.userAgent)  // true : 说明是6-8 其中的一个
+
+// 获取所有子元素节点 获取下一个弟弟元素点  获取所有哥哥的元素节点  hasClass
+
+
+</script>
+</body>
+</html>

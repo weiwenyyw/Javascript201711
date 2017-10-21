@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width:200px;
+            margin:800px auto;
+        }
+        img{
+            /*opacity: 0.1;*/
+            display: block;
+            width:200px;
+            height:200px;
+        }
+
+    </style>
+</head>
+<body>
+    <span>1</span>
+    <div id="box"><img src="img/default.jpg" trueImg="img/10.jpg" alt=""></div>
+    <script src="utils.js"></script>
+<script>
+    // 单张图片延迟加载 ：首先给img 一张默认的图片  把这个img存储的真实图片地址放在这个img标签的自定义属性上；
+    // 加载的临界条件：当img的上偏移量 +img自身的高度<页面滚动条卷去的高度+浏览器一屏的高度   满足这个条件让图片加载；
+    var img = document.getElementsByTagName("img")[0];
+    var curT = utils.offset(img).top;
+    var curH = img.offsetHeight;
+    var winH = document.documentElement.clientHeight || document.body.clientHeight;
+    var  trueAddress = img.getAttribute("trueImg");
+
+    // window.scroll
+    window.onscroll = function () {
+        // 当第一次执行这个方法时，img.load 是undefined
+        if(img.load){
+            return;
+        }
+        var winT = document.documentElement.scrollTop||document.body.scrollTop;
+//        img.load = true;
+        if(winT+winH>curT + curH){
+            // 满足条件，对img这个对象的src属性重新赋值；
+            // 创建一个img 标签；
+            // 这个创建的img，用来检测当前地址是否真的存在图片
+            var oImg = document.createElement("img");
+            oImg.src = trueAddress;
+            // 只有这个oImg的src能够找到当前图片时，onload方法才会执行
+            oImg.onload = function () {
+                img.src = trueAddress;
+                fadeIn();
+                // 图片加载成功之后，给img新增load属性
+                img.load = true;
+            }
+        }
+    }
+    // 实现图片渐变；
+    function fadeIn() {
+        utils.setCss(img,"opacity",0.1);
+        var timer =setInterval(function () {
+            // 获取元素的透明度
+            var opac = utils.getCss(img,"opacity");
+            // 当透明度大于等于1，清除定时器；
+            if(opac>=1){
+                clearInterval(timer)
+            }
+            opac +=0.1;
+            // 设置当前img的透明度；
+            utils.setCss(img,"opacity",opac);
+        },100)
+    }
+
+
+
+    //    console.log(curT);
+
+
+
+</script>
+</body>
+</html>

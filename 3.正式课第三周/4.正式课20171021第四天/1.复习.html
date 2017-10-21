@@ -1,0 +1,168 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        html{
+            width:100%;
+            height:100%;
+        }
+        body{
+            width:100%;
+            height:500%;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<script>
+    // 正则的引用 ： 处理字符串；
+    // test: 匹配 返回值true false
+    //  exec :  把符合正则的内容找出来  返回一个数组 ： []
+     // ()  改变正则的优先级
+    // 带有分组的正则 ： 不仅捕获大正则的内容，还要对小正则内容进行捕获
+
+    // \d :
+    // \b : 匹配一个单词的边界
+    // +  ?  *
+    // ?    ?=正向预查   ?!   负向预查  ?: 放在分组的前面，只匹配不捕获
+    // 放在量词的后面，取消捕获的贪婪性
+
+
+    // 正则的修饰符
+     // 懒惰性  ； g  加到正则的后面，取消捕获的懒惰性
+    // i : 忽略大小写
+    // m : 多行匹配
+//    var reg = /zhufeng(\d+)/g;
+//    var str = "zhufeng12ZHUFENG34zhufeng56";
+//    console.log(reg.exec(str));
+//    console.log(reg.lastIndex);
+//    console.log(reg.exec(str));
+//    console.log(reg.lastIndex);
+
+    // replace  : 字符串的方法
+//    var reg = /zhufeng(\d+)/g;
+//    var str = "zhufeng12ZHUFENG34zhufeng56";
+//    str.replace("zhufeng","zhufengpeixun")
+//    str.replace(/zhufeng/ig,"zhufengpeixun");
+//    str.replace(/zhufeng/ig,function () {
+//        console.log(arguments);
+//        // 捕获几次，回调函数执行几次；
+//        // arguments[0] : 捕获的内容
+//    })
+    // 有效数字的正则
+//    var str = "my name is zhufeng, i am 8 year old";
+    // 把这个字符串所有的单词的首字母大写；
+
+//    str = str.replace(/\b([a-z])[a-z]*\b/g,function () {
+//        console.log(arguments)//
+//        return arguments[1].toUpperCase() +arguments[0].substr(1);
+//    })
+//    console.log(str);
+
+    // 思考题 ：找出上面这个字符出现次数最多的字符，把这个次数输出；
+
+//        var reg = /zhufeng(\d+)/g;
+//        var str = "zhufeng12zhufeng34zhufeng56";
+        // match  : 捕获 字符串
+//    console.log(str.match(reg));//["zhufeng12", "zhufeng34", "zhufeng56"]
+       // 只对大正则进行捕获，不对小正则进行捕获；
+    // 面向对象 ： 类的继承 封装 多态
+    // 继承
+//    $.ajax({})
+//    function A() {
+//    }
+//    A.prototype.getX = function () {
+//    }
+//    function B() {
+//        A.call(this)
+//    };
+//    B.prototype= new A;
+//    var b = new B;
+//    b.getX()//
+
+// 中间类
+    // 寄生组合式继承
+    //   var b = {}
+    //   var a = Object.create(b)
+    //   es6 继承 私有公有全部继承
+
+//    class B{
+//        constructor(){
+//
+//        }
+//
+//    }
+//    class A extends B{
+//        constructor(){
+//            super();
+//        }
+//    }
+
+    // js中的盒子模型
+
+    // clientWidth clientHeight
+    // offsetWidth  offsetHeight
+    // scrollWidth scrollHeight
+    // clientTop  clientLeft
+
+    // offsetParent
+    // offsetLeft
+    // offsetTop
+
+//    function offset(curEle) {
+//        var l=curEle.offsetLeft;
+//        var t=curEle.offsetTop;
+//        var p=curEle.offsetParent;
+//        while (p){
+//            // 排除IE8浏览器
+//            if(!/MSIE 8\.0/.test(navigator.userAgent)){
+//                l+=p.clientLeft;
+//                t+=p.clientTop;
+//            }
+//            l+=p.offsetLeft;
+//            t+=p.offsetTop;
+//            p=p.offsetParent;
+//        }
+//        return {left:l,top:t}
+//    }
+//    offset()
+
+    //scrollTop   scrollLeft
+
+//   document.body.scrollTop =100;
+
+//    var winH =document.documentElement.clientHeight || document.body.clientHeight
+//    var winW =document.documentElement.clientWidth || document.body.clientWidth
+
+
+    // 页面纵向滚动卷去的高度
+    var scroT = document.documentElement.scrollTop || document.body.scrollTop
+    var scroL = document.documentElement.scrollLeft || document.body.scrollLeft
+    // 传一个参数，是获取当前的页面纵向横向滚动条卷去的高度，；两个参数就是设置页面滚动条的位置
+    function win(attr,value) {
+        if(typeof value==="undefined"){
+            return document.documentElement[attr] || document.body[attr];
+        }
+        document.documentElement[attr] = value;
+        document.body[attr] = value;
+    }
+    win("scrollTop");
+    win("scrollTop",1000);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
