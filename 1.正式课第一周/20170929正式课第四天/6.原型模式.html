@@ -46,11 +46,11 @@
     }
     Fn.prototype.getX = function () {
         console.log(this.x)
-    }
+    };
     var f =new  Fn;
     var f1 = new Fn;
     //console.log(f1.__proto__.constructor === Fn);
-    console.log(f1.getX)
+    console.log(f1.getX);
     //f1.__proto__.getX === Fn.prototype.getX // true
     //f1.getX === Fn.prototype.getX// true;
     //在IE10及以下，有__proto__这个属性，IE给禁用，不兼容;

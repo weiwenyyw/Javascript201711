@@ -58,8 +58,8 @@
     //
     // 偏移量： 当前元素距离父级参照物内边框的距离；
     // offsetTop offsetLeft : 距离父级参照物的内边框的距离
-//    console.log(inner.offsetLeft); // 50
-//    console.log(center.offsetLeft);
+    console.log(inner.offsetLeft); // 50
+    console.log(center.offsetLeft);
 
 
     // IE8(不是模拟仿真) ：计算偏移量会把父级参照物的边框的算进去
@@ -85,9 +85,9 @@
             t+=p.offsetTop;
             // 获取当前元素父级参照物的父级参照物
             p = p.offsetParent;
-        };
+        }
         return {left:l,top:t};
-    };
+    }
     console.log(offset(inner).left);
     //
     console.log(navigator.userAgent);// 浏览器版本信息

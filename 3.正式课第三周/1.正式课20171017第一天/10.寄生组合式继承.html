@@ -24,7 +24,7 @@
     function B() {
         // call 解决了私有的问题；
         A.call(this)
-    };
+    }
     // 原型继承不仅继承私有而且继承公有属性；
     //在B和Object之间增加一条链，没有直接指向Object 的原型，而是指向A.prototype;
     B.prototype = Object.create(A.prototype);
